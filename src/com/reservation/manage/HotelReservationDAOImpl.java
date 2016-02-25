@@ -6,32 +6,24 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import javassist.compiler.ast.Stmnt;
+public class HotelReservationDAOImpl implements IHotelReservationDAO {
 
-import javax.swing.JOptionPane;
+    public Statement stmnt = null;
+    public ResultSet rows = null;
 
-public class \ implements IHotelReservationDAO {
-	
-	
-	public  Statement stmnt = null;
-    public  ResultSet rows = null;
-	@Override
-	public Connection dbConnector() {
-	    
-		Connection con = null;
+    @Override
+    public Connection dbConnector() {
+
+        Connection con = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(url, username, password);
-            
-            if(con!=null)
-            {
-            	System.out.println("Connection successfull");
+
+            if (con != null) {
+                System.out.println("Connection successfull");
+            } else {
+                System.out.println("Connection not successfull");
             }
-            else
-            {
-            	System.out.println("Connection not successfull");
-            }
-            
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -43,44 +35,37 @@ public class \ implements IHotelReservationDAO {
         }
 
         return con;
-	
-	}
 
-	@Override
-	public int login(String usrnme, String passwrd) {
-		int count = 0;
-		String logQuery = "select username,password from user where username = '" +  usrnme+"' and  password ='" +passwrd+ "'";
-		try {
-			stmnt = connection.createStatement();
-			rows = stmnt.executeQuery(logQuery);
-			while(rows.next())
-			{
-				count = count + 1;
-				
-				
-			}
-			
-			if(count == 1)
-			{
-				System.out.println("granted");
-				
-			}
-			else if(count > 0)
-			{
-				System.out.println("duplicate");
-				
-			}
-			else
-			{
-				System.out.println("check username password");
-				
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return 1;
-	}
+    }
+
+    @Override
+    public int login(String usrnme, String passwrd) {
+        int count = 0;
+        String logQuery = "select username,password from user where username = '" + usrnme + "' and  password ='" + passwrd + "'";
+        try {
+            stmnt = connection.createStatement();
+            rows = stmnt.executeQuery(logQuery);
+            while (rows.next()) {
+                count = count + 1;
+
+            }
+
+            if (count == 1) {
+                System.out.println("granted");
+
+            } else if (count > 0) {
+                System.out.println("duplicate");
+
+            } else {
+                System.out.println("check username password");
+
+            }
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        return 1;
+    }
 
 }
