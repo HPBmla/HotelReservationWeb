@@ -10,12 +10,14 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 
     public Statement stmnt = null;
     public ResultSet rows = null;
-
+   public Connection con = null;
+    
     @Override
     public Connection dbConnector() {
 
-        Connection con = null;
+     
         try {
+        	
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(url, username, password);
 
@@ -41,9 +43,10 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
     @Override
     public int login(String usrnme, String passwrd) {
         int count = 0;
-        String logQuery = "select username,password from user where username = '" + usrnme + "' and  password ='" + passwrd + "'";
+        con = dbConnector();
+        String logQuery = " select username,password from user where username = '" + usrnme + "' and  password ='" + passwrd + "'";
         try {
-            stmnt = connection.createStatement();
+            stmnt = con.createStatement();
             rows = stmnt.executeQuery(logQuery);
             while (rows.next()) {
                 count = count + 1;

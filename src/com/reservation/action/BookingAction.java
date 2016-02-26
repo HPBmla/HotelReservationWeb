@@ -14,7 +14,7 @@ public class BookingAction {
 		 String username =  loginUser.getUsername();
 		 loginUser.setPassword("1234");
 		 String psswrd = loginUser.getPassword();
-		   service.connection();
+		 //  service.connection();
 		   //System.out.println("hellow world!!!!"+name);
 		   service.login(username, psswrd);
 	      return "success";

@@ -20,11 +20,12 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 		}
 		else
 		{
-			dbcon.login(username, passwrd);
+		int i =	dbcon.login(username, passwrd);
+		
 		}
 		
 		
-		dbcon.dbConnector();
+		//dbcon.dbConnector();
 		return 0;
 	}
 
