@@ -6,9 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import com.reservation.beans.User;
+
 public class HotelReservationDAOImpl implements IHotelReservationDAO {
 
-    public Statement stmnt = null;
+    private static final String String = null;
+	public Statement stmnt = null;
     public ResultSet rows = null;
    public Connection con = null;
     
@@ -67,8 +70,50 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+     /*   try {
+			//con.close();
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}*/
 
         return 1;
     }
+
+	@Override
+	public int userRegistration(User user) {
+		//user.setFname();
+		String firstNme = user.getFname();
+		String lastNme = user.getLname();
+		String add1 = user.getAdd1();
+		String add2 = user.getAdd2();
+		String add3 = user.getAdd3();
+		String usrnme = user.getUsername();
+		String pswrd = user.getPassword();
+		int telNum = user.getTelNum();
+		boolean flagUser = user.isUserType();
+		
+		String addSql = " insert into user (fname,lname,add_lne1,add_lne2,add_ln3,username,password,tel_num,flag_user,nic) "+ 
+				"values "+ "('"+ firstNme+"','"+lastNme+"','"+add1+"','"+add2+"','"+add3+"','"+usrnme+"','"+pswrd+"','"+telNum+"','"+flagUser+"')";
+		try {
+			stmnt = con.createStatement();
+			int i = stmnt.executeUpdate(addSql);
+			if(i > 0)
+			{
+				System.out.println("Records inserted");
+			}
+			else
+			{
+				System.out.println("Records not inserted");
+			}
+			
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
 
 }

@@ -11,7 +11,14 @@ public class User {
 	private String add3;
 	private int telNum;
 	private String nic;
+	private boolean userType;
 	
+	public boolean isUserType() {
+		return userType;
+	}
+	public void setUserType(boolean userType) {
+		this.userType = userType;
+	}
 	public String getUsername() {
 		return username;
 	}
