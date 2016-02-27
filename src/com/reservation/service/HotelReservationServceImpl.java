@@ -31,8 +31,46 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 
 	@Override
 	public int userRegistration(User user) {
+		int i = 0;
+		if(user.getFname().isEmpty())
+		{
+			System.out.print(" Enter your name ");
+		}
+		else if (user.getLname().isEmpty())
+		{
+			System.out.print(" Enter your last name ");
+		}
+		else if(user.getAdd1().isEmpty())
+		{
+			System.out.print(" Enter your address ");
+		}
+		else if(user.getAdd2().isEmpty())
+		{
+			System.out.print(" Enter your address ");
+		}
+		else if(user.getAdd3().isEmpty())
+		{
+			System.out.print(" Enter your address ");
+		}
+		else if(user.getNic().isEmpty())
+		{
+			System.out.print(" Enter your National Id  ");
+		}
+		else if(user.getPassword().isEmpty())
+		{
+			System.out.print(" Enter a password ");
+		}
+		else if(user.getUsername().isEmpty())
+		{
+			System.out.print(" Enter a username ");
+		}
+		else
+		{
+			 i = dbcon.userRegistration(user);
+		}
 		
-		return 0;
+		
+		return i;
 	}
 
 	@Override

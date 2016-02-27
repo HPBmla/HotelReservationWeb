@@ -12,8 +12,25 @@ public class User {
 	private int telNum;
 	private String nic;
 	private boolean userType;
-	
+	public User()
+	{
+		
+	}
+	public User(String uNme,String pWrd,String fnme,String lnme, String ad1,String ad2,String ad3, int tel,String nic, boolean flg )
+	{
+		username = uNme;
+		password = pWrd;
+		fname = fnme;
+		lname = lnme;
+		add1 = ad1;
+		add2 = ad2;
+		add3 = ad3;
+		telNum = tel;
+		this.nic = nic;
+		userType = flg;
+	}
 	public boolean isUserType() {
+		
 		return userType;
 	}
 	public void setUserType(boolean userType) {

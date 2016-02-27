@@ -113,7 +113,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 			e.printStackTrace();
 		}
 		
-		return 0;
+		return 1;
 	}
 
 }
