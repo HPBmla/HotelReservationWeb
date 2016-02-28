@@ -1,5 +1,8 @@
 package com.reservation.action;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.reservation.beans.User;
 import com.reservation.service.HotelReservationServceImpl;
 
@@ -18,6 +21,13 @@ public class BookingAction {
 		   //System.out.println("hellow world!!!!"+name);
 		   service.login(username, psswrd);
 		//service.userRegistration(loginUser);
+		   User userDetail = new User();
+		   
+		 userDetail =  service.getUserDetails(1);
+		 
+		 List<User> details = new ArrayList<User>();
+		 details.add(userDetail);
+		 
 	      return "success";
 	   }
 	   

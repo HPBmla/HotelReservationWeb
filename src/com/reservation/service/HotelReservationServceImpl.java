@@ -75,8 +75,13 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 
 	@Override
 	public User getUserDetails(int UId) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		User user = new User();
+	    user =dbcon.getUserDetails(UId);
+	 String fname = user.getFname();
+	 //String lname = user.
+	// System.out.println(name);
+		return user;
 	}
 
 	@Override

@@ -289,7 +289,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 	
 	public User getUserDetails(int UId)
 	{
-		String viewQuery = "select fname,lname,add_lne1,add_lne2,add_ln3,username,password,tel_num,flag_user,nic from user where user_id ='"+UId+"'";
+		String viewQuery = "select fname,lname,add_lne1,add_lne2,add_lne3,username,password,tel_num,flag_user,nic from user where user_id ='"+UId+"'";
 		con = dbConnector();
 		User user = new User();
 		try {
@@ -310,9 +310,31 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 				user.setNic(rows.getString("nic"));
 				
 			}
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+		finally
+		{
+			if(rows != null)
+			{
+				try {
+					rows.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			if(con != null)
+			{
+				try {
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
 		}
 		
 		
