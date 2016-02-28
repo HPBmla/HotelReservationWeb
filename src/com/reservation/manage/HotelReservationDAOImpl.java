@@ -2,6 +2,7 @@ package com.reservation.manage;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -14,6 +15,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 	public Statement stmnt = null;
     public ResultSet rows = null;
    public Connection con = null;
+   public PreparedStatement pstmnt =null; 
     
     @Override
     public Connection dbConnector() {
@@ -92,10 +94,12 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 		String pswrd = user.getPassword();
 		int telNum = user.getTelNum();
 		boolean flagUser = user.isUserType();
+		String nic = user.getNic();
 		
 		String addSql = " insert into user (fname,lname,add_lne1,add_lne2,add_ln3,username,password,tel_num,flag_user,nic) "+ 
-				"values "+ "('"+ firstNme+"','"+lastNme+"','"+add1+"','"+add2+"','"+add3+"','"+usrnme+"','"+pswrd+"','"+telNum+"','"+flagUser+"')";
+				"values "+ "('"+ firstNme+"','"+lastNme+"','"+add1+"','"+add2+"','"+add3+"','"+usrnme+"','"+pswrd+"','"+telNum+"','"+flagUser+"','"+nic+"')";
 		try {
+			con =dbConnector();
 			stmnt = con.createStatement();
 			int i = stmnt.executeUpdate(addSql);
 			if(i > 0)
@@ -115,5 +119,207 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 		
 		return 1;
 	}
-
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public User getUserDetails(int UId)
+	{
+		String viewQuery = "select fname,lname,add_lne1,add_lne2,add_ln3,username,password,tel_num,flag_user,nic from user where user_id ='"+UId+"'";
+		con = dbConnector();
+		User user = new User();
+		try {
+			pstmnt = con.prepareStatement(viewQuery);
+			rows = pstmnt.executeQuery();
+			while(rows.next())
+			{
+				
+				user.setFname(rows.getString("fname"));
+				user.setLname(rows.getString("lname"));
+				user.setAdd1(rows.getString("add_lne1"));
+				user.setAdd2(rows.getString("add_lne1"));
+				user.setAdd3(rows.getString("add_lne3"));
+				user.setUsername(rows.getString("username"));
+				user.setPassword(rows.getString("password"));
+				user.setTelNum(rows.getInt("tel_num"));
+				user.setUserType(rows.getBoolean("flag_user"));
+				user.setNic(rows.getString("nic"));
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		return user;
+		
+	}
+	
 }

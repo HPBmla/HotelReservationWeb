@@ -9,7 +9,7 @@ public class BookingAction {
 	HotelReservationServceImpl service = new HotelReservationServceImpl();
 
 	   public String execute() throws Exception {
-		   User loginUser = new User("malani","1234","malani","Rani","2A","Mahara","wat",0112233456,"342134567v",true);
+		   User loginUser = new User("malani","Rani","2A","Mahara","wat","malani","1234",0112233456,true,"342134567v");
 		   loginUser.setUsername("bimla");
 		 String username =  loginUser.getUsername();
 		 loginUser.setPassword("1234");
@@ -17,7 +17,7 @@ public class BookingAction {
 		 //  service.connection();
 		   //System.out.println("hellow world!!!!"+name);
 		   service.login(username, psswrd);
-		service.userRegistration(loginUser);
+		//service.userRegistration(loginUser);
 	      return "success";
 	   }
 	   

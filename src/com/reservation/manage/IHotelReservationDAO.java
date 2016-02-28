@@ -22,4 +22,45 @@ public interface IHotelReservationDAO {
 	public Connection dbConnector();
 	public int login(String usrnme, String passwrd);
 	public int userRegistration(User user);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public User getUserDetails(int UId);
 }

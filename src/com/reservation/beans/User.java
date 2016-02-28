@@ -16,18 +16,30 @@ public class User {
 	{
 		
 	}
-	public User(String uNme,String pWrd,String fnme,String lnme, String ad1,String ad2,String ad3, int tel,String nic, boolean flg )
+	public User(String fnme,String lnme, String ad1,String ad2,String ad3,String uNme,String pWrd, int tel, boolean flg,String nic )
 	{
-		username = uNme;
-		password = pWrd;
-		fname = fnme;
-		lname = lnme;
-		add1 = ad1;
-		add2 = ad2;
-		add3 = ad3;
-		telNum = tel;
-		this.nic = nic;
-		userType = flg;
+		setUsername(uNme);
+		username = getUsername();
+		setPassword(pWrd);
+		password = getPassword();
+		setFname(fnme);
+		fname = getFname();
+		setLname(lnme);
+		
+		lname = getLname();
+		setAdd1(ad1);
+		add1 = getAdd1();
+		setAdd2(ad2);
+		add2 = getAdd2();
+		setAdd3(ad3);
+		add3 = getAdd3();
+		setTelNum(tel);
+		telNum = getTelNum();
+		setNic(nic);
+		this.nic = getNic();
+		setUserType(flg);
+		
+		userType = isUserType();
 	}
 	public boolean isUserType() {
 		
@@ -90,7 +102,7 @@ public class User {
 	public void setNic(String nic) {
 		this.nic = nic;
 	}
- public enum UserTpe
+ public enum UserType
  {
 	 CUSTOMER,
 	 EMPLOYEE,
