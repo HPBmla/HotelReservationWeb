@@ -3,7 +3,9 @@ package com.reservation.manage;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.List;
 
+import com.reservation.beans.ReservationBean;
 import com.reservation.beans.User;
 
 public interface IHotelReservationDAO {
@@ -63,4 +65,5 @@ public interface IHotelReservationDAO {
 	
 	
 	public User getUserDetails(int UId);
+	public List<ReservationBean> getAllBookings();
 }
