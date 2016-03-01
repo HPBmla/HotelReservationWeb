@@ -135,10 +135,7 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 
 	@Override
 	public ReservationBean getBooking(int Uid) {
-<<<<<<< HEAD
-		
-=======
-		// TODO Auto-generated method stub
+
 		if(Uid == (int)Uid)
 		{
 			System.out.print(" Please Login to complete this functionality ");
@@ -147,7 +144,7 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 		{
 		//int i =	dbcon.getBooking(Uid);
 		}
->>>>>>> origin/master
+
 		return null;
 		//return dbcon.getBooking(Uid);
 	}
