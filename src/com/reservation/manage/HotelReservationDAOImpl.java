@@ -6,12 +6,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-<<<<<<< HEAD
 import java.util.Date;
-=======
 import java.util.ArrayList;
 import java.util.List;
->>>>>>> origin/master
 
 import com.reservation.beans.ReservationBean;
 import com.reservation.beans.User;
@@ -476,17 +473,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 				}
 			}
 		}
-<<<<<<< HEAD
-		return user;	
-	}	
-}
-=======
-		
-		
-		
-		
 		return user;
-		
 	}
 	
 	public List<ReservationBean> getAllBookings()
@@ -537,7 +524,4 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 		
 		return resrveBean;
 	}
-	}
-	
-
->>>>>>> origin/master
+}
