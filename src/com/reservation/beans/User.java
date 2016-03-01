@@ -4,6 +4,8 @@ public class User {
 
 	private String username;
 	private String password;
+	private String newPassword;
+	private String reTypedPassword;
 	private String fname;
 	private String lname;
 	private String add1;
@@ -102,7 +104,20 @@ public class User {
 	public void setNic(String nic) {
 		this.nic = nic;
 	}
- public enum UserType
+	//newly created methods for change credentials method
+ public String getNewPassword() {
+		return newPassword;
+	}
+	public void setNewPassword(String newPassword) {
+		this.newPassword = newPassword;
+	}
+public String getReTypedPassword() {
+		return reTypedPassword;
+	}
+	public void setReTypedPassword(String reTypedPassword) {
+		this.reTypedPassword = reTypedPassword;
+	}
+public enum UserType
  {
 	 CUSTOMER,
 	 EMPLOYEE,

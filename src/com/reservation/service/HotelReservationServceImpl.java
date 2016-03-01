@@ -220,7 +220,4 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 		db.dbConnector();
 		
 	}
-	
-
-
 }
