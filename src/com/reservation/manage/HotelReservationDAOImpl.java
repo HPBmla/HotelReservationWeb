@@ -478,7 +478,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 	
 	public List<ReservationBean> getAllBookings()
 	{
-		String getReservtbQuery = "select chekin_date,checkout_date,no_of_rooms,guests,persn_id,room_type from reservation";
+		String getReservtbQuery = "select checkin_date,checkout_date,no_of_rooms,guests,persn_id,room_type from reservation";
 		con = dbConnector();
 		ReservationBean reservation = new ReservationBean();
 		List<ReservationBean> resrveBean = null ;
@@ -488,7 +488,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
  resrveBean = new ArrayList<ReservationBean>();
 			while(rows.next())
 			{
-				reservation.setChechinDte(rows.getDate("fname"));
+				reservation.setChechinDte(rows.getDate("checkin_date"));
 				reservation.setChechoutDte(rows.getDate("checkout_date"));
 				reservation.setNoOfRms(rows.getInt("no_of_rooms"));
 				reservation.setNoOfGuests(rows.getInt("guests"));
