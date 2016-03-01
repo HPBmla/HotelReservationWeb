@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -122,6 +123,139 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 		
 		return 1;
 	}
+	
+	//create reservation
+		public String createReservation(ReservationBean bean) {
+			con = dbConnector();
+			Date chechinDte = bean.getChechinDte();
+			Date chechoutDte = bean.getChechoutDte();
+			int noOfRms = bean.getNoOfRms();
+			int noOfGuests = bean.getNoOfGuests();
+			String roomType = bean.getRoomType();
+			
+			String addSql = " INSERT INTO reservation (checkin_date,chechout_date,no_of_rooms,guests,room_type) "+ 
+					"values "+ "('"+ chechinDte +"','"+ chechoutDte +"','"+ noOfRms +"','"+ noOfGuests +"','"+ roomType +"')";
+			try {
+				stmnt = con.createStatement();
+				int i = stmnt.executeUpdate(addSql);
+				if(i > 0)
+				{
+					System.out.println("New Reservation Inserted");
+				}
+				else
+				{
+					System.out.println("Error inserting new Reservation");
+				}	
+			} catch (SQLException e) {
+				
+				e.printStackTrace();
+			}
+			return "success";
+		}
+	
+	//getBookings
+		public ReservationBean getBooking(int Uid) {
+			int userid = Uid;
+			con = dbConnector();
+			String getBookingQuery = " SELECT * FROM reservation WHERE persn_id = '"+ userid +"' ";
+			
+			try {
+				stmnt = con.createStatement();
+				int i = stmnt.executeUpdate(getBookingQuery);
+				if(i > 0)
+				{
+					System.out.println("Retrieved all Bookings");
+				}
+				else
+				{
+					System.out.println("Error Retrieving Bookings");
+				}	
+			} catch (SQLException e) {
+				
+				e.printStackTrace();
+			}
+		return null;
+		}
+		
+		//update reservation
+		public String updateReservation(ReservationBean bean){
+			con = dbConnector();
+			Date chechinDte = bean.getChechinDte();
+			Date chechoutDte = bean.getChechoutDte();
+			int noOfRms = bean.getNoOfRms();
+			int noOfGuests = bean.getNoOfGuests();
+			String roomType = bean.getRoomType();
+			
+			String updQuery = " UPDATE reservation SET checkin_date = '"+ chechinDte +"' || chechout_date = '"+ chechoutDte +"' || no_of_rooms = '"+ noOfRms +"' || guests = '"+ noOfGuests +"' || room_type = '"+ roomType +"' ";
+			
+			try {
+				stmnt = con.createStatement();
+				int i = stmnt.executeUpdate(updQuery);
+				if(i > 0)
+				{
+					System.out.println("Reservation Updated");
+				}
+				else
+				{
+					System.out.println("Error Updating Reservation");
+				}	
+			} catch (SQLException e) {
+				
+				e.printStackTrace();
+			}
+			return "success";
+		}
+	
+	//cancel reservation
+		public boolean cancelResrvtn(int resrvtnId) {
+			con = dbConnector();
+			String canclResQuery = " DELETE FROM reservation WHERE res_id = '"+ resrvtnId +"' ";
+			try
+			{
+				stmnt = con.createStatement();
+				int i = stmnt.executeUpdate(canclResQuery);
+				if(i > 0)
+				{
+					System.out.println("Reservation Cancelled Successfully");
+				}
+				else
+				{
+					System.out.println("Error Cancelling Reservation");
+				}
+			}catch(SQLException e){
+				// TODO Auto-generated catch block
+	            e.printStackTrace();
+			}
+			return true;
+		}
+	
+	//update user credentials
+		public boolean changeCredentials(User user) 
+		{
+	        con = dbConnector();
+	        String username = user.getUsername();
+	        String extPassword = user.getPassword();
+	    	String newPassword = user.getNewPassword();
+	    	//String reTypedPassword = user.getReTypedPassword();
+			
+	    	String updQuery = " UPDATE user SET password = '"+ newPassword +"' WHERE password = '"+ extPassword +"' && username = '"+ username +"' ";
+	        try {
+	        	stmnt = con.createStatement();
+				int i = stmnt.executeUpdate(updQuery);
+				if(i > 0)
+				{
+					System.out.println("Credentials Updated");
+				}
+				else
+				{
+					System.out.println("Credentials not Updated");
+				}
+	        } catch (SQLException e) {
+	            // TODO Auto-generated catch block
+	            e.printStackTrace();
+	        }
+			return true;
+	    }
 	
 	
 	
@@ -300,7 +434,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 			rows = pstmnt.executeQuery();
 			while(rows.next())
 			{
-				
+
 				user.setFname(rows.getString("fname"));
 				user.setLname(rows.getString("lname"));
 				user.setAdd1(rows.getString("add_lne1"));
@@ -339,12 +473,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 				}
 			}
 		}
-		
-		
-		
-		
 		return user;
-		
 	}
 	
 	public List<ReservationBean> getAllBookings()
@@ -395,6 +524,4 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 		
 		return resrveBean;
 	}
-	}
-	
-
+}

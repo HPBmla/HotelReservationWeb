@@ -105,31 +105,122 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 	@Override
 	public String createReservation(ReservationBean bean) {
 		// TODO Auto-generated method stub
-		
-		return null;
+		String i = null;
+		if(bean.getChechinDte()== null)
+		{
+			System.out.print(" Please select your Check In Date ");
+		}
+		else if (bean.getChechoutDte() == null)
+		{
+			System.out.print(" Please select your Check Out Date ");
+		}
+		else if(bean.getNoOfRms()==(int)bean.getNoOfRms())
+		{
+			System.out.print("  Please select the Number of rooms you need  ");
+		}
+		else if(bean.getNoOfGuests() == (int)bean.getNoOfGuests())
+		{
+			System.out.print(" Please select the Number of Guests you have ");
+		}
+		else if(bean.getRoomType().isEmpty())
+		{
+			System.out.print(" Please select the Room type you need ");
+		}
+		else
+		{
+			 i = dbcon.createReservation(bean);
+		}
+		return "success";
 	}
 
 	@Override
 	public ReservationBean getBooking(int Uid) {
+<<<<<<< HEAD
 		
+=======
+		// TODO Auto-generated method stub
+		if(Uid == (int)Uid)
+		{
+			System.out.print(" Please Login to complete this functionality ");
+		}
+		else
+		{
+		//int i =	dbcon.getBooking(Uid);
+		}
+>>>>>>> origin/master
 		return null;
+		//return dbcon.getBooking(Uid);
 	}
 
 	@Override
 	public String UpdateReservation(ReservationBean bean) {
 		// TODO Auto-generated method stub
-		return null;
+		String i = null;
+		if(bean.getChechinDte()== null)
+		{
+			System.out.print(" Please select your Check In Date ");
+		}
+		else if (bean.getChechoutDte() == null)
+		{
+			System.out.print(" Please select your Check Out Date ");
+		}
+		else if(bean.getNoOfRms()==(int)bean.getNoOfRms())
+		{
+			System.out.print("  Please select the Number of rooms you need  ");
+		}
+		else if(bean.getNoOfGuests() == (int)bean.getNoOfGuests())
+		{
+			System.out.print(" Please select the Number of Guests you have ");
+		}
+		else if(bean.getRoomType().isEmpty())
+		{
+			System.out.print(" Please select the Room type you need ");
+		}
+		else
+		{
+			 i = dbcon.updateReservation(bean);
+		}
+		return "success";
 	}
 
 	@Override
 	public boolean cancelResrvtn(int resrvtnId) {
 		// TODO Auto-generated method stub
-		return false;
+		if(resrvtnId==(int)resrvtnId)
+		{
+			System.out.print(" Please select a Reservation ");	
+		}
+		else
+		{
+		dbcon.cancelResrvtn(resrvtnId);
+		}
+		return true;
 	}
 
 	@Override
 	public boolean changeCredentials(User user) {
 		// TODO Auto-generated method stub
+		boolean i = false;
+		if(user.getUsername().isEmpty())
+		{
+			System.out.print(" Please enter your Username ");
+		}
+		else if (user.getPassword().isEmpty())
+		{
+			System.out.print(" Please enter your Existing Password ");
+		}
+		else if(user.getNewPassword().isEmpty())
+		{
+			System.out.print(" Please enter your New Password ");
+		}
+		else if(user.getReTypedPassword().isEmpty())
+		{
+			System.out.print(" Please Re-type your New Password ");
+		}
+		else
+		{
+			 i = dbcon.changeCredentials(user);
+		}
 		return false;
 	}
 
@@ -139,7 +230,4 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 		db.dbConnector();
 		
 	}
-	
-
-
 }

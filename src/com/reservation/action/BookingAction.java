@@ -22,6 +22,7 @@ public class BookingAction {
 		   service.login(username, psswrd);
 		//service.userRegistration(loginUser);
 		   User userDetail = new User();
+		  
 		   
 		 userDetail =  service.getUserDetails(1);
 		 
