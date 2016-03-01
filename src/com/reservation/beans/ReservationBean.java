@@ -8,6 +8,13 @@ public class ReservationBean {
 	private int noOfRms;
 	private int noOfGuests;
 	private String roomType;
+	private int personId;
+	public int getPersonId() {
+		return personId;
+	}
+	public void setPersonId(int personId) {
+		this.personId = personId;
+	}
 	public Date getChechinDte() {
 		return chechinDte;
 	}

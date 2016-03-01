@@ -6,7 +6,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+<<<<<<< HEAD
 import java.util.Date;
+=======
+import java.util.ArrayList;
+import java.util.List;
+>>>>>>> origin/master
 
 import com.reservation.beans.ReservationBean;
 import com.reservation.beans.User;
@@ -471,6 +476,68 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 				}
 			}
 		}
+<<<<<<< HEAD
 		return user;	
 	}	
 }
+=======
+		
+		
+		
+		
+		return user;
+		
+	}
+	
+	public List<ReservationBean> getAllBookings()
+	{
+		String getReservtbQuery = "select chekin_date,checkout_date,no_of_rooms,guests,persn_id,room_type from reservation";
+		con = dbConnector();
+		ReservationBean reservation = new ReservationBean();
+		List<ReservationBean> resrveBean = null ;
+		try {
+			pstmnt = con.prepareStatement(getReservtbQuery);
+			rows = pstmnt.executeQuery();
+ resrveBean = new ArrayList<ReservationBean>();
+			while(rows.next())
+			{
+				reservation.setChechinDte(rows.getDate("fname"));
+				reservation.setChechoutDte(rows.getDate("checkout_date"));
+				reservation.setNoOfRms(rows.getInt("no_of_rooms"));
+				reservation.setNoOfGuests(rows.getInt("guests"));
+				reservation.setPersonId(rows.getInt("persn_id"));
+				reservation.setRoomType(rows.getString("room_type"));
+				resrveBean.add(reservation);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally
+		{
+			if(rows != null)
+			{
+				try {
+					rows.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			if(con != null)
+			{
+				try {
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		return resrveBean;
+	}
+	}
+	
+
+>>>>>>> origin/master

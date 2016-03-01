@@ -86,7 +86,7 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 
 	@Override
 	public List<ReservationBean> getAllBookings() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
