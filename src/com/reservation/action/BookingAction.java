@@ -27,6 +27,7 @@ public class BookingAction {
 		 
 		 List<User> details = new ArrayList<User>();
 		 details.add(userDetail);
+		 service.getAllBookings();
 		 
 	      return "success";
 	   }

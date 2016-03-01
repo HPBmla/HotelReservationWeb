@@ -87,6 +87,12 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 	@Override
 	public List<ReservationBean> getAllBookings() {
 		
+	List<ReservationBean> bookingList =	dbcon.getAllBookings();
+	for(ReservationBean resrvtn : bookingList)
+	{
+		System.out.println(resrvtn.getNoOfRms());
+	}
+		
 		return null;
 	}
 
@@ -105,7 +111,7 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 
 	@Override
 	public ReservationBean getBooking(int Uid) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
