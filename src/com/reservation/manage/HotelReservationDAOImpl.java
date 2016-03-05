@@ -524,4 +524,56 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 		
 		return resrveBean;
 	}
+	
+	public List<ReservationBean> getAllBookings(int UsrId)
+	{
+		String getReservtbQuery = "select checkin_date,checkout_date,no_of_rooms,guests,persn_id,room_type from reservation where persn_id='"+UsrId+"'";
+		con = dbConnector();
+		ReservationBean reservtn = new ReservationBean();
+		List<ReservationBean> resrveBean = null ;
+		try {
+			pstmnt = con.prepareStatement(getReservtbQuery);
+			rows = pstmnt.executeQuery();
+ resrveBean = new ArrayList<ReservationBean>();
+			while(rows.next())
+			{
+				reservtn.setChechinDte(rows.getDate("checkin_date"));
+				reservtn.setChechoutDte(rows.getDate("checkout_date"));
+				reservtn.setNoOfRms(rows.getInt("no_of_rooms"));
+				reservtn.setNoOfGuests(rows.getInt("guests"));
+				reservtn.setPersonId(rows.getInt("persn_id"));
+				reservtn.setRoomType(rows.getString("room_type"));
+				resrveBean.add(reservtn);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally
+		{
+			if(rows != null)
+			{
+				try {
+					rows.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			if(con != null)
+			{
+				try {
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		return resrveBean;
+		
+		
+		
+	}
 }

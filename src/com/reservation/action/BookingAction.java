@@ -29,7 +29,7 @@ public class BookingAction {
 		 List<User> details = new ArrayList<User>();
 		 details.add(userDetail);
 		 service.getAllBookings();
-		 
+		 service.getAllBookings(1);
 	      return "success";
 	   }
 	   
