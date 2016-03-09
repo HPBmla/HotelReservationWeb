@@ -57,7 +57,7 @@
                                         <div class="col-sm-12">
                                             <p>Enter must enter a valid Email & Password combination to access your account:</p>
                                             <div class="well">
-                                                <form id="loginForm" method="POST" action="/login/" novalidate="novalidate">
+                                                <form id="loginForm" method="POST" action="hr/login/" novalidate="novalidate">
                                                     <div class="form-group">
                                                         <div class="input-group">
                                                             <span class="input-group-addon" id="UserEmail"><i class="fa fa-user" title="Enter Your username"></i></span>

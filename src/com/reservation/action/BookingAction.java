@@ -3,6 +3,8 @@ package com.reservation.action;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.omg.PortableInterceptor.SUCCESSFUL;
+
 import com.reservation.beans.User;
 import com.reservation.service.HotelReservationServceImpl;
 
@@ -12,7 +14,7 @@ public class BookingAction {
 	HotelReservationServceImpl service = new HotelReservationServceImpl();
 
 	   public String execute() throws Exception {
-		   User loginUser = new User("malani","Rani","2A","Mahara","wat","malani","1234",0112233456,true,"342134567v");
+		/*   User loginUser = new User("malani","Rani","2A","Mahara","wat","malani","1234",0112233456,true,"342134567v");
 		   loginUser.setUsername("bimla");
 		 String username =  loginUser.getUsername();
 		 loginUser.setPassword("1234");
@@ -29,10 +31,16 @@ public class BookingAction {
 		 List<User> details = new ArrayList<User>();
 		 details.add(userDetail);
 		 service.getAllBookings();
-		 service.getAllBookings(1);
+//		 service.getAllBookings(1);*/
 	      return "success";
 	   }
 	   
+	   public String loginExecute() 
+	   {
+		   
+		   
+		   return "success";
+	   }
 	   public String getName() {
 	      return name;
 	   }
