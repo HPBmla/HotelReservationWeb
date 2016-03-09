@@ -1,10 +1,17 @@
 package com.reservation.action;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
+<<<<<<< HEAD
 import org.omg.PortableInterceptor.SUCCESSFUL;
 
+=======
+import org.apache.struts2.components.Bean;
+
+import com.reservation.beans.ReservationBean;
+>>>>>>> origin/master
 import com.reservation.beans.User;
 import com.reservation.service.HotelReservationServceImpl;
 
@@ -33,6 +40,7 @@ public class BookingAction {
 		 service.getAllBookings();
 //		 service.getAllBookings(1);*/
 	      return "success";
+	     
 	   }
 	   
 	   public String loginExecute() 
@@ -48,8 +56,6 @@ public class BookingAction {
 	   public void setName(String name) {
 	      this.name = name;
 	   }
-	   
-	   
 	   
 
 }

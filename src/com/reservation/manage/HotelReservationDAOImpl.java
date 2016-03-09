@@ -126,7 +126,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 	
 	//create reservation
 		public String createReservation(ReservationBean bean) {
-			con = dbConnector();
+			
 			Date chechinDte = bean.getChechinDte();
 			Date chechoutDte = bean.getChechoutDte();
 			int noOfRms = bean.getNoOfRms();
@@ -136,6 +136,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 			String addSql = " INSERT INTO reservation (checkin_date,chechout_date,no_of_rooms,guests,room_type) "+ 
 					"values "+ "('"+ chechinDte +"','"+ chechoutDte +"','"+ noOfRms +"','"+ noOfGuests +"','"+ roomType +"')";
 			try {
+				con = dbConnector();
 				stmnt = con.createStatement();
 				int i = stmnt.executeUpdate(addSql);
 				if(i > 0)
