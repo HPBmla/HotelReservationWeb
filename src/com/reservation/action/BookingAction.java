@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-<<<<<<< HEAD
+
 import org.omg.PortableInterceptor.SUCCESSFUL;
 
-=======
+
 import org.apache.struts2.components.Bean;
 
 import com.reservation.beans.ReservationBean;
->>>>>>> origin/master
+
 import com.reservation.beans.User;
 import com.reservation.service.HotelReservationServceImpl;
 
