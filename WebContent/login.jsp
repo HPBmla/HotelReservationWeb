@@ -25,19 +25,19 @@
                         <div class="content">
                             <ul class="nav nav-pills nav-main" id="mainMenu">
                                 <li class="dropdown 218 active">
-                                    <a href="index.html" class="dropdown-toggle disabled active">Home</a>   
+                                    <a href="WebContent/home.jsp" class="dropdown-toggle disabled active">Home</a>   
                                 </li>
                                 <li class="dropdown 1777">
-                                    <a href="login.html" title="" class="dropdown-toggle disabled">Register</a>
+                                    <a href="WebContent/login.jsp" title="" class="dropdown-toggle disabled">Register</a>
                                 </li>
                                 <li class="dropdown 346">
-                                    <a href="viewBookings.html" title="" class="dropdown-toggle disabled">View My Bookings</a>
+                                    <a href="WebContent/viewbookings.jsp" title="" class="dropdown-toggle disabled">View My Bookings</a>
                                 </li>
                                 <li class="dropdown 346">
-                                    <a href="aboutUs.html" title="" class="dropdown-toggle disabled">About Us</a>
+                                    <a href="WebContent/aboutus.jsp" title="" class="dropdown-toggle disabled">About Us</a>
                                 </li>
                                 <li class="dropdown 346">
-                                    <a href="contactUs.html" title="" class="dropdown-toggle disabled">Contact Us</a>
+                                    <a href="WebContent/contactus.jsp" title="" class="dropdown-toggle disabled">Contact Us</a>
                                 </li>
                             </ul>
                         </div>
@@ -57,7 +57,7 @@
                                         <div class="col-sm-12">
                                             <p>Enter must enter a valid Email & Password combination to access your account:</p>
                                             <div class="well">
-                                                <form id="loginForm" method="POST" action="/login/" novalidate="novalidate">
+                                                <form id="loginForm" novalidate="novalidate">
                                                     <div class="form-group">
                                                         <div class="input-group">
                                                             <span class="input-group-addon" id="UserEmail"><i class="fa fa-user" title="Enter Your username"></i></span>
@@ -90,7 +90,7 @@
                                         <div class="col-sm-12">
                                             <p>To reset your password you must enter a valid email address below:</p>
                                             <div class="well">
-                                                <form id="loginForm" method="POST" action="/login/" novalidate="novalidate">
+                                                <form id="loginForm" novalidate="novalidate">
                                                     <div class="form-group">
                                                         <div class="input-group">
                                                             <span class="input-group-addon" id="UserEmail"><i class="fa fa-user" title="Enter Your Username"></i></span>
