@@ -1,8 +1,12 @@
 package com.reservation.action;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
+import org.apache.struts2.components.Bean;
+
+import com.reservation.beans.ReservationBean;
 import com.reservation.beans.User;
 import com.reservation.service.HotelReservationServceImpl;
 
@@ -31,6 +35,7 @@ public class BookingAction {
 		 service.getAllBookings();
 		 service.getAllBookings(1);
 	      return "success";
+	     
 	   }
 	   
 	   public String getName() {
@@ -40,8 +45,6 @@ public class BookingAction {
 	   public void setName(String name) {
 	      this.name = name;
 	   }
-	   
-	   
 	   
 
 }
