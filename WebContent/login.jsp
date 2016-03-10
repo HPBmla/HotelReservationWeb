@@ -58,18 +58,18 @@
                                         <div class="col-sm-12">
                                             <p>Enter must enter a valid Email & Password combination to access your account:</p>
                                             <div class="well">
-                                                <form id="loginForm" novalidate="novalidate">
+                                                <form id="loginForm" novalidate="novalidate" action = "hr/login" method = "post">
                                                     <div class="form-group">
                                                         <div class="input-group">
                                                             <span class="input-group-addon" id="UserEmail"><i class="fa fa-user" title="Enter Your username"></i></span>
-                                                            <input type="text" class="form-control" id="username" name="username" value="" required title="Please enter you username" placeholder="Enter Username" />
+                                                            <input type="text" class="form-control" id="username" name="user.username" value="" required title="Please enter you username" placeholder="Enter Username" />
                                                         </div>
                                                         <span class="help-block"></span>
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="input-group">
                                                             <span class="input-group-addon" id="UserPasswordMatch"><i class="fa fa-lock" title="Choose password"></i></span>
-                                                            <input type="password" class="form-control" id="passwordmatch" name="passwordmatch" value="" required title="Enter your password" placeholder="Enter Password" />
+                                                            <input type="password" class="form-control" id="passwordmatch" name="user.password" value="" required title="Enter your password" placeholder="Enter Password" />
                                                         </div>
                                                     </div>
                                                     <button type="submit" class="btn btn-success btn-block">Login</button>
@@ -77,11 +77,7 @@
                                             </div>
                                             <div>
                                             <p>testing</p>
-                                            <form action="hr/login" method="post" >
-      <label for="name">Please enter your name</label><br/>
-      <input type="text" name="user.username"/>
-      <input type="text" name="user.password"/>
-      <input type="submit" value="Say Hello"/>
+                                       
    </form>
 
                                             

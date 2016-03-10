@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -59,13 +60,13 @@
 										<i class="fa fa-user"
 											style="width: 65px; height: 65px; font-size: 45px; margin: 0 auto 8px; padding-top: 7px; padding-left: 13px; display: block; border: solid 1px #CDCDCD; color: #CECECE; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%;"></i>
 									</div>
-									<form id="NewAccountForm" method="POST" action="/submit/"
+									<form id="NewAccountForm" method="POST" action="hr/register"
 										novalidate="novalidate">
 										<div class="form-group">
 											<div class="input-group">
 												<span class="input-group-addon" id="UserEmail"><i
 													class="fa fa-user" title="Enter Your First Name"></i></span> <input
-													type="text" class="form-control" id="fname" name="fname"
+													type="text" class="form-control" id="fname" name="user.fname"
 													value="" required title="Enter Your First Name"
 													placeholder="Enter Your First Name" /> <span
 													class="input-group-addon" id="PasswordLockAltHelp"><a
@@ -78,7 +79,7 @@
 											<div class="input-group">
 												<span class="input-group-addon" id="UserEmail"><i
 													class="fa fa-user" title="Enter Your Last Name"></i></span> <input
-													type="text" class="form-control" id="lname" name="lname"
+													type="text" class="form-control" id="lname" name="user.lname"
 													value="" required title="Enter Your Last Name"
 													placeholder="Enter Your Last Name" /> <span
 													class="input-group-addon" id="PasswordLockAltHelp"><a
@@ -91,7 +92,7 @@
 											<div class="input-group">
 												<span class="input-group-addon" id="UserEmail"><i
 													class="fa fa-user" title="Enter Your PostalCode"></i></span> <input
-													type="text" class="form-control" id="addl1" name="addl1"
+													type="text" class="form-control" id="addl1" name="user.add1"
 													value="" required title="Enter Your Recidence PostalCode"
 													placeholder="Enter Your Recidence PostalCode" /> <span
 													class="input-group-addon" id="PasswordLockAltHelp"><a
