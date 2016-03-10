@@ -4,6 +4,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
+import com.reservation.service.HotelReservationServceImpl;
+
 @Path("/abc")
 public class BookingResource {
 	
@@ -14,7 +16,15 @@ public class BookingResource {
 	    System.out.println("correct");
 		return "Hello world";
 	}
- 
+	
+/*	public int login()
+	{
+	   HotelReservationServceImpl serviceLogin = new HotelReservationServceImpl();
+	   
+	   serviceLogin.login(username, passwrd);
+	   
+	}
+ */
 
 	
 

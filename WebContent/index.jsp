@@ -14,5 +14,12 @@
       <input type="text" name="name"/>
       <input type="submit" value="Say Hello"/>
    </form>
+   <s:form action="hr/login/">
+ 
+  <s:textfield name="user.username" label="Your name" value = "%{user.username}"/>
+     <s:password name="user.password" value = "%{user.password}" size="10" maxlength="15" />
+   <s:submit value="Submit" />
+ 
+</s:form>
 </body>
 </html>

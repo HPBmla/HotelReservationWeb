@@ -17,11 +17,16 @@ import com.reservation.service.HotelReservationServceImpl;
 
 public class BookingAction {
 	private String name;
+	private User user;
 	
+	
+
+	
+
 	HotelReservationServceImpl service = new HotelReservationServceImpl();
 
 	   public String execute() throws Exception {
-		/*   User loginUser = new User("malani","Rani","2A","Mahara","wat","malani","1234",0112233456,true,"342134567v");
+		   User loginUser = new User("malani","Rani","2A","Mahara","wat","malani","1234",0112233456,true,"342134567v");
 		   loginUser.setUsername("bimla");
 		 String username =  loginUser.getUsername();
 		 loginUser.setPassword("1234");
@@ -38,15 +43,23 @@ public class BookingAction {
 		 List<User> details = new ArrayList<User>();
 		 details.add(userDetail);
 		 service.getAllBookings();
-//		 service.getAllBookings(1);*/
+//		 service.getAllBookings(1);
 	      return "success";
 	     
 	   }
 	   
-	   public String loginExecute() 
+	   public String login() 
 	   {
 		   
-		   
+		   if(user!= null)
+		   {
+			   System.out.println(""+user.getUsername());
+			   System.out.println(""+user.getPassword());
+		   }
+		   else
+		   {
+			   System.out.println("empty");
+		   }
 		   return "success";
 	   }
 	   public String getName() {
@@ -56,6 +69,13 @@ public class BookingAction {
 	   public void setName(String name) {
 	      this.name = name;
 	   }
+	   public User getUser() {
+			return user;
+		}
+
+		public void setUser(User user) {
+			this.user = user;
+		}
 	   
 
 }

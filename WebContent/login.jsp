@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -73,6 +74,19 @@
                                                     </div>
                                                     <button type="submit" class="btn btn-success btn-block">Login</button>
                                                 </form>
+                                            </div>
+                                            <div>
+                                            <p>testing</p>
+                                            <form action="hr/login" method="post" >
+      <label for="name">Please enter your name</label><br/>
+      <input type="text" name="user.username"/>
+      <input type="text" name="user.password"/>
+      <input type="submit" value="Say Hello"/>
+   </form>
+
+                                            
+                                            
+                                            
                                             </div>
                                             <p style="text-align: center;"><a href="#" title="Forgot password?">Forgot password?</a></p>
                                         </div>
