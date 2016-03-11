@@ -117,6 +117,7 @@ public String getReTypedPassword() {
 	public void setReTypedPassword(String reTypedPassword) {
 		this.reTypedPassword = reTypedPassword;
 	}
+	
 public enum UserType
  {
 	 CUSTOMER,

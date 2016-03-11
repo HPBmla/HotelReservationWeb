@@ -89,6 +89,8 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 	@Override
 	public int userRegistration(User user) {
 		//user.setFname();
+		user.setUserType(true);
+		boolean flag = user.isUserType();
 		String firstNme = user.getFname();
 		String lastNme = user.getLname();
 		String add1 = user.getAdd1();

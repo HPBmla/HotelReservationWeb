@@ -101,11 +101,14 @@
 											</div>
 											<span class="help-block"></span>
 										</div>
+										 <input type="radio" name="user.userType" value="True" checked> Customer<br>
+                                         <input type="radio" name="user.userType" value="false"> Employee<br>
+  
 										<div class="form-group">
 											<div class="input-group">
 												<span class="input-group-addon" id="UserEmail"><i
 													class="fa fa-user" title="Enter Your Street"></i></span> <input
-													type="text" class="form-control" id="addl2" name="addl2"
+													type="text" class="form-control" id="addl2" name="user.add2"
 													value="" required title="Enter Your Street Name"
 													placeholder="Enter Your Street Name" /> <span
 													class="input-group-addon" id="PasswordLockAltHelp"><a
@@ -118,7 +121,7 @@
 											<div class="input-group">
 												<span class="input-group-addon" id="UserEmail"><i
 													class="fa fa-user" title="Enter Your City"></i></span> <input
-													type="text" class="form-control" id="addl3" name="addl3"
+													type="text" class="form-control" id="addl3" name="user.add3"
 													value="" required title="Enter Your City"
 													placeholder="Enter Your City" /> <span
 													class="input-group-addon" id="PasswordLockAltHelp"><a
@@ -131,7 +134,7 @@
 											<div class="input-group">
 												<span class="input-group-addon" id="nic"><i
 													class="fa fa-user" title="Enter Your NIC"></i></span> <input
-													type="text" class="form-control" id="nic" name="nic"
+													type="text" class="form-control" id="nic" name="user.nic"
 													value="" required title="Enter Your NIC"
 													placeholder="Enter Your NIC" /> <span
 													class="input-group-addon" id="PasswordLockAltHelp"><a
@@ -145,7 +148,7 @@
 												<span class="input-group-addon" id="UserPassword"><i
 													class="fa fa-unlock-alt" title="Choose a Username"></i></span> <input
 													type="text" class="form-control" id="username"
-													name="username" value="" required title="Choose a Username"
+													name="user.username" value="" required title="Choose a Username"
 													placeholder="Choose a Username" /> <span
 													class="input-group-addon" id="PasswordLockAltHelp"><a
 													href="#CVVLightbox" data-toggle="modal"><i
@@ -158,7 +161,7 @@
 												<span class="input-group-addon" id="password"><i
 													class="fa fa-lock" title="Choose a password"></i></span> <input
 													type="password" class="form-control" id="password"
-													name="password" value="" required title="Choose a password"
+													name="user.password" value="" required title="Choose a password"
 													placeholder="Choose a password" /> <span
 													class="input-group-addon" id="PasswordLockAltHelp"><a
 													href="#CVVLightbox" data-toggle="modal"><i
@@ -170,13 +173,26 @@
 												<span class="input-group-addon" id="UserPasswordMatch"><i
 													class="fa fa-lock" title="Re-enter password"></i></span> <input
 													type="password" class="form-control" id="passwordmatch"
-													name="passwordmatch" value="" required
+													name="user.passwordmatch" value="" required
 													title="Re-enter password" placeholder="Re-enter password" />
 												<span class="input-group-addon" id="PasswordLockAltHelp"><a
 													href="#CVVLightbox" data-toggle="modal"><i
 														class="fa fa-question-circle"></i></a></span>
 											</div>
 										</div>
+									<!--  <div class="form-group">
+											<div class="input-group">
+												<span class="input-group-addon" id="UserPassword"><i
+													class="fa fa-unlock-alt" title="Add contact details"></i></span> <input
+													type="text" class="form-control" id=" user.telNum "
+													name="username" value="" required title="Choose a Username"
+													placeholder="Choose a Username" /> <span
+													class="input-group-addon" id="PasswordLockAltHelp"><a
+													href="#CVVLightbox" data-toggle="modal"><i
+														class="fa fa-question-circle"></i></a></span>
+											</div>
+											<span class="help-block"></span>
+										</div>-->
 										<button type="submit" class="btn btn-success btn-block">Submit</button>
 									</form>
 								</div>

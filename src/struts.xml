@@ -16,5 +16,10 @@
             method="login">
             <result name="success">/HelloWorld.jsp</result>
       </action>
+       <action name="register"
+       class="com.reservation.action.BookingAction" 
+            method="register">
+            <result name="success">/login.jsp</result>
+      </action>
    </package>
 </struts>

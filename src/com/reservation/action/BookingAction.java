@@ -62,6 +62,33 @@ public class BookingAction {
 		   }
 		   return "success";
 	   }
+	   
+	   public String register()
+	   {
+		   if (user!=null)
+		   {
+			   
+			   System.out.println(""+user.getFname());
+			   System.out.println(""+user.getLname()); 
+			   System.out.println(""+user.getAdd1());
+			   System.out.println(""+user.getAdd2()); 
+			   System.out.println(""+user.getAdd3());
+			   System.out.println(""+user.getUsername());
+			   System.out.println(""+user.getPassword());
+			   
+			   System.out.println(""+user.getReTypedPassword());
+			   System.out.println(""+user.getTelNum());
+			   System.out.println(""+user.isUserType());
+			   System.out.println(""+user.getNic());
+			   
+			    
+		   }
+		   else
+		   {
+			   System.out.println("No registration is done");
+		   }
+		   return "success";
+	   }
 	   public String getName() {
 	      return name;
 	   }
