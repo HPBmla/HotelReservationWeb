@@ -180,19 +180,19 @@
 														class="fa fa-question-circle"></i></a></span>
 											</div>
 										</div>
-									<!--  <div class="form-group">
+									 <div class="form-group">
 											<div class="input-group">
 												<span class="input-group-addon" id="UserPassword"><i
 													class="fa fa-unlock-alt" title="Add contact details"></i></span> <input
-													type="text" class="form-control" id=" user.telNum "
-													name="username" value="" required title="Choose a Username"
+													type="text" class="form-control" id=" telNum "
+													name="user.telNum" value="" required title="Choose a Username"
 													placeholder="Choose a Username" /> <span
 													class="input-group-addon" id="PasswordLockAltHelp"><a
 													href="#CVVLightbox" data-toggle="modal"><i
 														class="fa fa-question-circle"></i></a></span>
 											</div>
 											<span class="help-block"></span>
-										</div>-->
+										</div>
 										<button type="submit" class="btn btn-success btn-block">Submit</button>
 									</form>
 								</div>
