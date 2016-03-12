@@ -89,8 +89,8 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 	@Override
 	public int userRegistration(User user) {
 		//user.setFname();
-		user.setUserType(true);
-		boolean flag = user.isUserType();
+		user.setUserType("true");
+		String flag = user.getUserType();
 		String firstNme = user.getFname();
 		String lastNme = user.getLname();
 		String add1 = user.getAdd1();
@@ -99,11 +99,12 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 		String usrnme = user.getUsername();
 		String pswrd = user.getPassword();
 		int telNum = user.getTelNum();
-		boolean flagUser = user.isUserType();
+		String flagUser = user.getUserType();
 		String nic = user.getNic();
 		
-		String addSql = " insert into user (fname,lname,add_lne1,add_lne2,add_ln3,username,password,tel_num,flag_user,nic) "+ 
-				"values "+ "('"+ firstNme+"','"+lastNme+"','"+add1+"','"+add2+"','"+add3+"','"+usrnme+"','"+pswrd+"','"+telNum+"','"+flagUser+"','"+nic+"')";
+		
+		String addSql = " insert into user (fname,lname,add_lne1,add_lne2,add_lne3,username,password,tel_num,flag_user,nic) "+ 
+				"values "+ "('"+firstNme+"','"+lastNme+"','"+add1+"','"+add2+"','"+add3+"','"+usrnme+"','"+pswrd+"','"+telNum+"','"+flagUser+"','"+nic+"')";
 		try {
 			con =dbConnector();
 			stmnt = con.createStatement();
@@ -134,6 +135,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 			int noOfRms = bean.getNoOfRms();
 			int noOfGuests = bean.getNoOfGuests();
 			String roomType = bean.getRoomType();
+			
 			
 			String addSql = " INSERT INTO reservation (checkin_date,chechout_date,no_of_rooms,guests,room_type) "+ 
 					"values "+ "('"+ chechinDte +"','"+ chechoutDte +"','"+ noOfRms +"','"+ noOfGuests +"','"+ roomType +"')";
@@ -446,7 +448,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 				user.setUsername(rows.getString("username"));
 				user.setPassword(rows.getString("password"));
 				user.setTelNum(rows.getInt("tel_num"));
-				user.setUserType(rows.getBoolean("flag_user"));
+				user.setUserType(rows.getString("flag_user"));
 				user.setNic(rows.getString("nic"));
 				
 			}

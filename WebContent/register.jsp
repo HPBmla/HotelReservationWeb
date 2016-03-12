@@ -101,7 +101,7 @@
 											</div>
 											<span class="help-block"></span>
 										</div>
-										 <input type="radio" name="user.userType" value="True" checked> Customer<br>
+										 <input type="radio" name="user.userType" value="true" checked> Customer<br>
                                          <input type="radio" name="user.userType" value="false"> Employee<br>
   
 										<div class="form-group">
@@ -168,7 +168,7 @@
 														class="fa fa-question-circle"></i></a></span>
 											</div>
 										</div>
-										<div class="form-group">
+										<!-- <div class="form-group">
 											<div class="input-group">
 												<span class="input-group-addon" id="UserPasswordMatch"><i
 													class="fa fa-lock" title="Re-enter password"></i></span> <input
@@ -179,12 +179,12 @@
 													href="#CVVLightbox" data-toggle="modal"><i
 														class="fa fa-question-circle"></i></a></span>
 											</div>
-										</div>
+										</div>-->
 									 <div class="form-group">
 											<div class="input-group">
 												<span class="input-group-addon" id="UserPassword"><i
 													class="fa fa-unlock-alt" title="Add contact details"></i></span> <input
-													type="text" class="form-control" id=" telNum "
+													type="text" class="form-control" id="telNums"
 													name="user.telNum" value="" required title="Choose a Username"
 													placeholder="Choose a Username" /> <span
 													class="input-group-addon" id="PasswordLockAltHelp"><a

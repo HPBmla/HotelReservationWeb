@@ -13,12 +13,12 @@ public class User {
 	private String add3;
 	private int telNum;
 	private String nic;
-	private boolean userType;
+	private String userType;
 	public User()
 	{
 		
 	}
-	public User(String fnme,String lnme, String ad1,String ad2,String ad3,String uNme,String pWrd, int tel, boolean flg,String nic )
+	public User(String fnme,String lnme, String ad1,String ad2,String ad3,String uNme,String pWrd, int tel, String flg,String nic )
 	{
 		setUsername(uNme);
 		username = getUsername();
@@ -41,13 +41,13 @@ public class User {
 		this.nic = getNic();
 		setUserType(flg);
 		
-		userType = isUserType();
+		userType = getUserType();
 	}
-	public boolean isUserType() {
+	public String getUserType() {
 		
 		return userType;
 	}
-	public void setUserType(boolean userType) {
+	public void setUserType(String userType) {
 		this.userType = userType;
 	}
 	public String getUsername() {
