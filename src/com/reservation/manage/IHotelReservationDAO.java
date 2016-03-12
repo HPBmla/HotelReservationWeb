@@ -67,4 +67,5 @@ public interface IHotelReservationDAO {
 	public User getUserDetails(int UId);
 	public List<ReservationBean> getAllBookings();
 	public List<ReservationBean> getAllBookings(int UsrId);
+	public String encryption(String password);
 }

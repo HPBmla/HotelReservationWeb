@@ -73,7 +73,7 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 		return i;
 	}
 
-	@Override
+/*	@Override
 	public User getUserDetails(int UId) {
 		
 		User user = new User();
@@ -82,9 +82,9 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 	 //String lname = user.
 	// System.out.println(name);
 		return user;
-	}
+	}*/
 
-	@Override
+/*	@Override
 	public List<ReservationBean> getAllBookings() {
 		
 	List<ReservationBean> bookingList =	dbcon.getAllBookings();
@@ -95,7 +95,7 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 	}
 		
 		return null;
-	}
+	}*/
 
 	@Override
 	public List<ReservationBean> getAllBookings(int UsrId) {
@@ -201,7 +201,7 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 		}
 		return true;
 	}
-
+/*
 	@Override
 	public boolean changeCredentials(User user) {
 		// TODO Auto-generated method stub
@@ -227,7 +227,7 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 			 i = dbcon.changeCredentials(user);
 		}
 		return false;
-	}
+	}*/
 
 	@Override
 	public void connection() {

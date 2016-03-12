@@ -26,7 +26,7 @@ public class BookingAction {
 	HotelReservationServceImpl service = new HotelReservationServceImpl();
 
 	   public String execute() throws Exception {
-		   User loginUser = new User("malani","Rani","2A","Mahara","wat","malani","1234",0112233456,"true","342134567v");
+		  /*User loginUser = new User("malani","Rani","2A","Mahara","wat","malani","1234",0112233456,"true","342134567v");
 		   loginUser.setUsername("bimla");
 		 String username =  loginUser.getUsername();
 		 loginUser.setPassword("1234");
@@ -38,12 +38,12 @@ public class BookingAction {
 		   User userDetail = new User();
 		  
 		   
-		 userDetail =  service.getUserDetails(1);
+		// userDetail =  service.getUserDetails(1);
 		 
 		 List<User> details = new ArrayList<User>();
 		 details.add(userDetail);
-		 service.getAllBookings();
-//		 service.getAllBookings(1);
+		// service.getAllBookings();
+	 service.getAllBookings(1);*/
 	      return "success";
 	     
 	   }
