@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 <!--css files-->
-<link href="css/table.css" rel="stylesheet" type="text/css" />
+<!--<link href="css/table.css" rel="stylesheet" type="text/css" />-->
 <link href="css/commonCss.css" rel="stylesheet" type="text/css" />
 <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css" />
 <link href="css/bootstrap-theme.min.css" rel="stylesheet"
@@ -43,7 +43,7 @@
 			<h2>View All Booking</h2>
 			<!--add new table-->
 			<div class="form-group">
-				<table id="table_id" class="display">
+				<table id="table_id" class="table">
 					<thead>
 						<tr>
 							<th>Date</th>
@@ -53,14 +53,19 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td>2015/02/02</td>
-							<td>12.45</td>
-							<td>2.30</td>
+							<td>null</td>
+							<td>null</td>
+							<td>null</td>
 						</tr>
 						<tr>
-							<td>2015/02/02</td>
-							<td>12.45</td>
-							<td>2.30</td>
+							<td>null</td>
+							<td>null</td>
+							<td>null</td>
+						</tr>
+						<tr>
+							<td>null</td>
+							<td>null</td>
+							<td>null</td>
 						</tr>
 					</tbody>
 				</table>
@@ -72,7 +77,7 @@
 	<script src="js/bootstrap.js" type="text/javascript"></script>
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="js/npm.js" type="text/javascript"></script>
-	<script src="js/table.js" type="text/javascript"></script>
+	<!--<script src="js/table.js" type="text/javascript"></script>-->
 	<script src="js/viewBookings.js" type="text/javascript"></script>
 	<!--/js files-->
 </body>
