@@ -1,22 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	<%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 <!--css files-->
-<link href="WebContent/css/commonCss.css" rel="stylesheet"
+<link href="css/commonCss.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap-theme.min.css" rel="stylesheet"
 	type="text/css" />
-<link href="WebContent/css/bootstrap-theme.css" rel="stylesheet"
-	type="text/css" />
-<link href="WebContent/css/bootstrap-theme.min.css" rel="stylesheet"
-	type="text/css" />
-<link href="WebContent/css/bootstrap.css" rel="stylesheet"
-	type="text/css" />
-<link href="WebContent/css/bootstrap.min.css" rel="stylesheet"
-	type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <!--/css files-->
 </head>
 <body>
@@ -66,8 +62,9 @@
 											<div class="input-group">
 												<span class="input-group-addon" id="UserEmail"><i
 													class="fa fa-user" title="Enter Your First Name"></i></span> <input
-													type="text" class="form-control" id="fname" name="user.fname"
-													value="" required title="Enter Your First Name"
+													type="text" class="form-control" id="fname"
+													name="user.fname" value="" required
+													title="Enter Your First Name"
 													placeholder="Enter Your First Name" /> <span
 													class="input-group-addon" id="PasswordLockAltHelp"><a
 													href="#UserEmailLightbox" data-toggle="modal"><i
@@ -79,8 +76,9 @@
 											<div class="input-group">
 												<span class="input-group-addon" id="UserEmail"><i
 													class="fa fa-user" title="Enter Your Last Name"></i></span> <input
-													type="text" class="form-control" id="lname" name="user.lname"
-													value="" required title="Enter Your Last Name"
+													type="text" class="form-control" id="lname"
+													name="user.lname" value="" required
+													title="Enter Your Last Name"
 													placeholder="Enter Your Last Name" /> <span
 													class="input-group-addon" id="PasswordLockAltHelp"><a
 													href="#UserEmailLightbox" data-toggle="modal"><i
@@ -92,8 +90,9 @@
 											<div class="input-group">
 												<span class="input-group-addon" id="UserEmail"><i
 													class="fa fa-user" title="Enter Your PostalCode"></i></span> <input
-													type="text" class="form-control" id="addl1" name="user.add1"
-													value="" required title="Enter Your Recidence PostalCode"
+													type="text" class="form-control" id="addl1"
+													name="user.add1" value="" required
+													title="Enter Your Recidence PostalCode"
 													placeholder="Enter Your Recidence PostalCode" /> <span
 													class="input-group-addon" id="PasswordLockAltHelp"><a
 													href="#UserEmailLightbox" data-toggle="modal"><i
@@ -101,15 +100,17 @@
 											</div>
 											<span class="help-block"></span>
 										</div>
-										 <input type="radio" name="user.userType" value="true" checked> Customer<br>
-                                         <input type="radio" name="user.userType" value="false"> Employee<br>
-  
+										<input type="radio" name="user.userType" value="true" checked>
+										Customer<br> <input type="radio" name="user.userType"
+											value="false"> Employee<br>
+
 										<div class="form-group">
 											<div class="input-group">
 												<span class="input-group-addon" id="UserEmail"><i
 													class="fa fa-user" title="Enter Your Street"></i></span> <input
-													type="text" class="form-control" id="addl2" name="user.add2"
-													value="" required title="Enter Your Street Name"
+													type="text" class="form-control" id="addl2"
+													name="user.add2" value="" required
+													title="Enter Your Street Name"
 													placeholder="Enter Your Street Name" /> <span
 													class="input-group-addon" id="PasswordLockAltHelp"><a
 													href="#UserEmailLightbox" data-toggle="modal"><i
@@ -121,8 +122,8 @@
 											<div class="input-group">
 												<span class="input-group-addon" id="UserEmail"><i
 													class="fa fa-user" title="Enter Your City"></i></span> <input
-													type="text" class="form-control" id="addl3" name="user.add3"
-													value="" required title="Enter Your City"
+													type="text" class="form-control" id="addl3"
+													name="user.add3" value="" required title="Enter Your City"
 													placeholder="Enter Your City" /> <span
 													class="input-group-addon" id="PasswordLockAltHelp"><a
 													href="#UserEmailLightbox" data-toggle="modal"><i
@@ -148,9 +149,9 @@
 												<span class="input-group-addon" id="UserPassword"><i
 													class="fa fa-unlock-alt" title="Choose a Username"></i></span> <input
 													type="text" class="form-control" id="username"
-													name="user.username" value="" required title="Choose a Username"
-													placeholder="Choose a Username" /> <span
-													class="input-group-addon" id="PasswordLockAltHelp"><a
+													name="user.username" value="" required
+													title="Choose a Username" placeholder="Choose a Username" />
+												<span class="input-group-addon" id="PasswordLockAltHelp"><a
 													href="#CVVLightbox" data-toggle="modal"><i
 														class="fa fa-question-circle"></i></a></span>
 											</div>
@@ -161,9 +162,9 @@
 												<span class="input-group-addon" id="password"><i
 													class="fa fa-lock" title="Choose a password"></i></span> <input
 													type="password" class="form-control" id="password"
-													name="user.password" value="" required title="Choose a password"
-													placeholder="Choose a password" /> <span
-													class="input-group-addon" id="PasswordLockAltHelp"><a
+													name="user.password" value="" required
+													title="Choose a password" placeholder="Choose a password" />
+												<span class="input-group-addon" id="PasswordLockAltHelp"><a
 													href="#CVVLightbox" data-toggle="modal"><i
 														class="fa fa-question-circle"></i></a></span>
 											</div>
@@ -180,14 +181,14 @@
 														class="fa fa-question-circle"></i></a></span>
 											</div>
 										</div>-->
-									 <div class="form-group">
+										<div class="form-group">
 											<div class="input-group">
 												<span class="input-group-addon" id="UserPassword"><i
 													class="fa fa-unlock-alt" title="Add contact details"></i></span> <input
 													type="text" class="form-control" id="telNums"
-													name="user.telNum" value="" required title="Choose a Username"
-													placeholder="Choose a Username" /> <span
-													class="input-group-addon" id="PasswordLockAltHelp"><a
+													name="user.telNum" value="" required
+													title="Choose a Username" placeholder="Choose a Username" />
+												<span class="input-group-addon" id="PasswordLockAltHelp"><a
 													href="#CVVLightbox" data-toggle="modal"><i
 														class="fa fa-question-circle"></i></a></span>
 											</div>
@@ -221,10 +222,10 @@
 		</div>
 	</div>
 	<!--js files-->
-	<script src="WebContent/js/jquery-1.11.3.min.js" type="text/javascript"></script>
-	<script src="WebContent/js/bootstrap.js" type="text/javascript"></script>
-	<script src="WebContent/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="WebContent/js/npm.js" type="text/javascript"></script>
+	<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+	<script src="js/bootstrap.js" type="text/javascript"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="js/npm.js" type="text/javascript"></script>
 	<!--/js files-->
 </body>
 </html>

@@ -6,16 +6,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 <!--css files-->
-<link href="WebContent/css/commonCss.css" rel="stylesheet"
+<link href="css/commonCss.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap-theme.min.css" rel="stylesheet"
 	type="text/css" />
-<link href="WebContent/css/bootstrap-theme.css" rel="stylesheet"
-	type="text/css" />
-<link href="WebContent/css/bootstrap-theme.min.css" rel="stylesheet"
-	type="text/css" />
-<link href="WebContent/css/bootstrap.css" rel="stylesheet"
-	type="text/css" />
-<link href="WebContent/css/bootstrap.min.css" rel="stylesheet"
-	type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <!--/css files-->
 </head>
 <body>
@@ -133,10 +129,10 @@
 		</div>
 	</div>
 	<!--js files-->
-	<script src="WebContent/js/jquery-1.11.3.min.js" type="text/javascript"></script>
-	<script src="WebContent/js/bootstrap.js" type="text/javascript"></script>
-	<script src="WebContent/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="WebContent/js/npm.js" type="text/javascript"></script>
+	<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+	<script src="js/bootstrap.js" type="text/javascript"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="js/npm.js" type="text/javascript"></script>
 	<!--/js files-->
 </body>
 </html>
