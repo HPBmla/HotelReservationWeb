@@ -14,7 +14,8 @@
       <action name="login"
        class="com.reservation.action.BookingAction" 
             method="login">
-            <result name="success">/HelloWorld.jsp</result>
+            <result name="success">/newbooking.jsp</result>
+            <result  name= "error">/login.jsp</result>
       </action>
        <action name="register"
        class="com.reservation.action.BookingAction" 

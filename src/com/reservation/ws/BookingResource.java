@@ -16,15 +16,14 @@ public class BookingResource {
 	    System.out.println("correct");
 		return "Hello world";
 	}
-	
-/*	public int login()
+	/*	public int login()
 	{
 	   HotelReservationServceImpl serviceLogin = new HotelReservationServceImpl();
 	   
 	   serviceLogin.login(username, passwrd);
 	   
-	}
- */
+	}*/
+
 
 	
 

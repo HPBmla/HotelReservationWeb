@@ -52,7 +52,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
     }
 
     @Override
-    public int login(String usrnme, String passwrd) {
+    public User login(String usrnme, String passwrd) {
         int count = 0;
         con = dbConnector();
         String logQuery = " select username,password from user where username = '" + usrnme + "' and  password ='" + passwrd + "'";
@@ -65,6 +65,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
             }
 
             if (count == 1) {
+            	
                 System.out.println("granted");
 
             } else if (count > 0) {
@@ -85,9 +86,28 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 			e.printStackTrace();
 		}*/
 
-        return 1;
+        return null;
     }
-
+     public User getUser(String username)
+     {
+    	 String query = "select user_id,password from user";
+    	 User user = new User();
+    	 
+    	 try {
+			stmnt = con.createStatement();
+			rows = stmnt.executeQuery(query);
+			while(rows.next())
+			{
+				user.setUserId(rows.getInt("user_id"));
+			}
+	    	 
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+         
+    	 return user;
+     }
 	@Override
 	public int userRegistration(User user) {
 		//user.setFname();

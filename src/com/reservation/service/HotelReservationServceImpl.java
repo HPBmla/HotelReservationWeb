@@ -11,8 +11,10 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 
 	
 	HotelReservationDAOImpl dbcon = new HotelReservationDAOImpl();
+	User user = new User();
+	
 	@Override
-	public int login(String username, String passwrd) {
+	public User login(String username, String passwrd) {
 		if(username.isEmpty() || passwrd.isEmpty())
 		{
 			System.out.print(" Enter username and password ");
@@ -20,13 +22,13 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 		}
 		else
 		{
-		int i =	dbcon.login(username, passwrd);
+		user =	dbcon.login(username, passwrd);
 		
 		}
 		
 		
 		//dbcon.dbConnector();
-		return 0;
+		return user;
 	}
 
 	@Override

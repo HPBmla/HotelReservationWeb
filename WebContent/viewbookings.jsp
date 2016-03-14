@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -71,6 +72,22 @@
 				</table>
 			</div>
 		</div>
+	</div>
+	<div>
+	<p>testing</p>
+	<s:iterator value="groupDao.groups" status="groupStatus">
+    <tr class="<s:if test="#groupStatus.odd == true ">odd</s:if><s:else>even</s:else>">
+        <td><s:property value="name" /></td>
+        <td><s:property value="description" /></td>
+        <td>
+            <s:iterator value="users" status="userStatus">
+                <s:property value="fullName" /><s:if test="!#userStatus.last">,</s:if>
+            </s:iterator>
+            <s:property value="user.username" />
+        </td>
+    </tr>
+</s:iterator>
+	
 	</div>
 	<!--js files-->
 	<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>

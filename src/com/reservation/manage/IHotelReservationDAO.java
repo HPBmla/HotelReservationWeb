@@ -22,7 +22,7 @@ public interface IHotelReservationDAO {
     public static Statement stmnt = null;
     public static ResultSet rows = null;
 	public Connection dbConnector();
-	public int login(String usrnme, String passwrd);
+	public User login(String usrnme, String passwrd);
 	public int userRegistration(User user);
 	
 	

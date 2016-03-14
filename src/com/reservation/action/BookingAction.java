@@ -5,21 +5,26 @@ import java.util.Date;
 import java.util.List;
 
 
+import java.util.Map;
+
 import org.omg.PortableInterceptor.SUCCESSFUL;
 
 
 import org.apache.struts2.components.Bean;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.reservation.beans.ReservationBean;
-
 import com.reservation.beans.User;
 import com.reservation.service.HotelReservationServceImpl;
 
 public class BookingAction {
 	private String name;
 	private User user;
+	private List<ReservationBean> bookingList ;
 	
 	
+
+	Map<String,Object> session = ActionContext.getContext().getSession();
 
 	
 
@@ -55,12 +60,16 @@ public class BookingAction {
 		   {
 			   System.out.println(""+user.getUsername());
 			   System.out.println(""+user.getPassword());
+			 user =  service.login(user.getUsername(), user.getPassword());
+			 session.put("user", user);
+			 return "success";
 		   }
 		   else
 		   {
-			   System.out.println("empty");
+			   return "error";
 		   }
-		   return "success";
+		   
+		   
 	   }
 	   
 	   public String register()
@@ -90,6 +99,15 @@ public class BookingAction {
 		   }
 		   return "success";
 	   }
+	   
+	   public String bookings()
+	   {
+		
+		 int id = (int) session.get(user.getUserId());
+		 bookingList = service.getAllBookings(id);
+		  
+		   return "success";
+	   }
 	   public String getName() {
 	      return name;
 	   }
@@ -103,6 +121,13 @@ public class BookingAction {
 
 		public void setUser(User user) {
 			this.user = user;
+		}
+		public List<ReservationBean> getBookingList() {
+			return bookingList;
+		}
+
+		public void setBookingList(List<ReservationBean> bookingList) {
+			this.bookingList = bookingList;
 		}
 	   
 
