@@ -79,6 +79,10 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+        finally
+        {
+        	closeConnctn(con, rows, stmnt);
+        }
      /*   try {
 			//con.close();
 		} catch (SQLException e) {
@@ -111,7 +115,10 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-         
+         finally
+         {
+        	 closeConnctn(con, rows, stmnt);
+         }
     	 return user;
      }
 	@Override
@@ -150,6 +157,10 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 		} catch (SQLException e) {
 			
 			e.printStackTrace();
+		}
+		finally
+		{
+			closeConnctn(con, rows, stmnt);
 		}
 		
 		return 1;
@@ -487,24 +498,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 		}
 		finally
 		{
-			if(rows != null)
-			{
-				try {
-					rows.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-			if(con != null)
-			{
-				try {
-					con.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
+			closeConnctn(con, rows, stmnt);
 		}
 		return user;
 	}
@@ -535,24 +529,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 		}
 		finally
 		{
-			if(rows != null)
-			{
-				try {
-					rows.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-			if(con != null)
-			{
-				try {
-					con.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
+			closeConnctn(con, rows, stmnt);
 		}
 		
 		return resrveBean;
@@ -584,24 +561,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 		}
 		finally
 		{
-			if(rows != null)
-			{
-				try {
-					rows.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-			if(con != null)
-			{
-				try {
-					con.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
+			closeConnctn(con, rows, stmnt);
 		}
 		
 		return resrveBean;
@@ -633,5 +593,30 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 		
 		
 		return hashVal.toString();
+	}
+	
+	private void closeConnctn(Connection con, ResultSet rs, Statement stmnt)
+	{
+		if(rs != null)
+		{
+			try {
+				rs.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		if(con != null)
+		{
+			try {
+				con.close();
+				
+				stmnt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
 	}
 }
