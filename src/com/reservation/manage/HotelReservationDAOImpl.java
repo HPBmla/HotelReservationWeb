@@ -611,7 +611,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 			try {
 				con.close();
 				
-				stmnt.close();
+				//stmnt.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

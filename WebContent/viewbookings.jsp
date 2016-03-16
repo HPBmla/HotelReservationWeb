@@ -52,23 +52,25 @@
 							<th>Check-Out Time</th>
 						</tr>
 					</thead>
+					<s:iterator value="bookingList" status="groupStatus">
 					<tbody>
 						<tr>
-							<td>null</td>
-							<td>null</td>
-							<td>null</td>
+							<td><s:property value="name" /></td>
+							<td><s:property value="%{chechinDte}" /></td>
+							<td><s:property value="chechoutDte" /></td>
 						</tr>
 						<tr>
-							<td>null</td>
-							<td>null</td>
-							<td>null</td>
+							<td><s:property value="name" /></td>
+							<td><s:property value="%{chechinDte}" /></td>
+							<td><s:property value="chechoutDte" /></td>
 						</tr>
 						<tr>
-							<td>null</td>
-							<td>null</td>
-							<td>null</td>
+							<td><s:property value="name" /></td>
+							<td><s:property value="%{chechinDte}" /></td>
+							<td><s:property value="chechoutDte" /></td>
 						</tr>
 					</tbody>
+					</s:iterator>
 				</table>
 			</div>
 		</div>
