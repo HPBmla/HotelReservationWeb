@@ -14,7 +14,8 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 	User user = new User();
 	
 	@Override
-	public User login(String username, String passwrd) {
+	public int login(String username, String passwrd) {
+		int i = 0;
 		if(username.isEmpty() || passwrd.isEmpty())
 		{
 			System.out.print(" Enter username and password ");
@@ -22,13 +23,13 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 		}
 		else
 		{
-		user =	dbcon.login(username, passwrd);
+		 i =	dbcon.login(username, passwrd);
 		
 		}
 		
 		
 		//dbcon.dbConnector();
-		return user;
+		return i;
 	}
 
 	@Override
@@ -105,7 +106,7 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 		
 		for(ReservationBean resrvation : indvidualBookingList)
 		{
-			System.out.println(resrvation.getNoOfRms());
+			System.out.println(resrvation.getChechinDte());
 		}
 			
 			

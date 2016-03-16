@@ -32,7 +32,7 @@
 						<li class="dropdown 1777"><a href="WebContent/login.jsp"
 							title="" class="dropdown-toggle disabled">Register</a></li>
 						<li class="dropdown 346"><a
-							href="WebContent/viewbookings.jsp" title=""
+							href="viewbookings.action" title=""
 							class="dropdown-toggle disabled">View My Bookings</a></li>
 						<li class="dropdown 346"><a href="WebContent/aboutus.jsp"
 							title="" class="dropdown-toggle disabled">About Us</a></li>
@@ -61,7 +61,7 @@
 											to access your account:</p>
 										<div class="well">
 											<form id="loginForm" novalidate="novalidate"
-												action="hr/login" method="post">
+												action="login.action" method="post" theme="css_xhtml">
 												<div class="form-group">
 													<div class="input-group">
 														<span class="input-group-addon" id="UserEmail"><i

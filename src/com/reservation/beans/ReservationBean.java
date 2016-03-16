@@ -9,6 +9,13 @@ public class ReservationBean {
 	private int noOfGuests;
 	private String roomType;
 	private int personId;
+	private String status;
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	public int getPersonId() {
 		return personId;
 	}

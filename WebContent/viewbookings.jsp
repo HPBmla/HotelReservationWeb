@@ -75,8 +75,8 @@
 	</div>
 	<div>
 	<p>testing</p>
-	<s:iterator value="groupDao.groups" status="groupStatus">
-    <tr class="<s:if test="#groupStatus.odd == true ">odd</s:if><s:else>even</s:else>">
+	<s:iterator value="bookingList" status="groupStatus">
+   <!--   <tr class="<s:if test="#groupStatus.odd == true ">odd</s:if><s:else>even</s:else>">
         <td><s:property value="name" /></td>
         <td><s:property value="description" /></td>
         <td>
@@ -85,7 +85,9 @@
             </s:iterator>
             <s:property value="user.username" />
         </td>
-    </tr>
+    </tr>-->
+    <s:label value="%{personId}"></s:label>
+    <s:label value="%{chechinDte}"></s:label>
 </s:iterator>
 	
 	</div>

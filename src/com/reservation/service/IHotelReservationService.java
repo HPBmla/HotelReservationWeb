@@ -8,7 +8,7 @@ import com.reservation.beans.User;
 
 public interface IHotelReservationService {
 
-	public User login (String username, String passwrd);
+	public int login (String username, String passwrd);
 	public int userRegistration(User user);
 	//public User getUserDetails(int UId);
 	//public List<ReservationBean> getAllBookings();

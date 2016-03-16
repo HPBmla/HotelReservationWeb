@@ -22,5 +22,10 @@
             method="register">
             <result name="success">/login.jsp</result>
       </action>
+      <action name="viewbookings"
+       class="com.reservation.action.BookingAction" 
+            method="bookings">
+            <result name="success">/viewbookings.jsp</result>
+      </action>
    </package>
 </struts>
