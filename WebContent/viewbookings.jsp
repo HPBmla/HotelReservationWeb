@@ -53,7 +53,12 @@
 					</thead>
 					<tbody>
 						<tr>
-<<<<<<< HEAD
+
+							<td><s:property value="name" /></td>
+							<td><s:property value="%{chechinDte}" /> </td>
+							<td> <s:property value="%{chechoutDte}" /> </td>
+						</tr>
+						<tr>
 							<td><s:property value="name" /></td>
 							<td><s:property value="%{chechinDte}" /></td>
 							<td><s:property value="%{chechoutDte}" /></td>
@@ -62,27 +67,10 @@
 							<td><s:property value="name" /></td>
 							<td><s:property value="%{chechinDte}" /></td>
 							<td><s:property value="%{chechoutDte}" /></td>
+
+							
 						</tr>
-						<tr>
-							<td><s:property value="name" /></td>
-							<td><s:property value="%{chechinDte}" /></td>
-							<td><s:property value="%{chechoutDte}" /></td>
-=======
-							<td>null</td>
-							<td>null</td>
-							<td>null</td>
-						</tr>
-						<tr>
-							<td>null</td>
-							<td>null</td>
-							<td>null</td>
-						</tr>
-						<tr>
-							<td>null</td>
-							<td>null</td>
-							<td>null</td>
->>>>>>> origin/master
-						</tr>
+						
 					</tbody>
 				</table>
 			</div>

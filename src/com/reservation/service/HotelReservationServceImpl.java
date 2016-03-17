@@ -235,5 +235,10 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 		db.dbConnector();
 		
 	}
+
+	public String UpdateReservation(ReservationBean bean) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
