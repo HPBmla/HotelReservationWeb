@@ -157,7 +157,7 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 		//return dbcon.getBooking(Uid);
 	}
 
-	@Override
+	/*@Override
 	public String UpdateReservation(ReservationBean bean) {
 		// TODO Auto-generated method stub
 		String i = null;
@@ -186,7 +186,7 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 			 i = dbcon.updateReservation(bean);
 		}
 		return "success";
-	}
+	}*/
 
 	@Override
 	public boolean cancelResrvtn(int resrvtnId) {

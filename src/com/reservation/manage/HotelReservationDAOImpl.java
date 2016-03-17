@@ -8,6 +8,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
@@ -131,9 +134,19 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 	
 	//create reservation
 		public String createReservation(ReservationBean bean) {
+			DateFormat df = new SimpleDateFormat("MM/dd/yyyy"); 
+			//Date startDate = df.parse(bean.getChechinDte());
 			
-			Date chechinDte = bean.getChechinDte();
-			Date chechoutDte = bean.getChechoutDte();
+			Date chechinDte = null;
+			Date chechoutDte = null;
+			try {
+				chechinDte = df.parse(bean.getChechinDte());
+				chechoutDte = df.parse(bean.getChechoutDte());
+			} catch (ParseException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
 			int noOfRms = bean.getNoOfRms();
 			int noOfGuests = bean.getNoOfGuests();
 			String roomType = bean.getRoomType();
@@ -184,7 +197,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 		return null;
 		}
 		
-		//update reservation
+		/*//update reservation
 		public String updateReservation(ReservationBean bean){
 			con = dbConnector();
 			Date chechinDte = bean.getChechinDte();
@@ -211,7 +224,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 				e.printStackTrace();
 			}
 			return "success";
-		}
+		}*/
 	
 	//cancel reservation
 		public boolean cancelResrvtn(int resrvtnId) {
@@ -495,8 +508,8 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
  resrveBean = new ArrayList<ReservationBean>();
 			while(rows.next())
 			{
-				reservation.setChechinDte(rows.getDate("checkin_date"));
-				reservation.setChechoutDte(rows.getDate("checkout_date"));
+				reservation.setChechinDte(rows.getString("checkin_date"));
+				reservation.setChechoutDte(rows.getString("checkout_date"));
 				reservation.setNoOfRms(rows.getInt("no_of_rooms"));
 				reservation.setNoOfGuests(rows.getInt("guests"));
 				reservation.setPersonId(rows.getInt("persn_id"));
@@ -544,8 +557,8 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
  resrveBean = new ArrayList<ReservationBean>();
 			while(rows.next())
 			{
-				reservtn.setChechinDte(rows.getDate("checkin_date"));
-				reservtn.setChechoutDte(rows.getDate("checkout_date"));
+				reservtn.setChechinDte(rows.getString("checkin_date"));
+				reservtn.setChechoutDte(rows.getString("checkout_date"));
 				reservtn.setNoOfRms(rows.getInt("no_of_rooms"));
 				reservtn.setNoOfGuests(rows.getInt("guests"));
 				reservtn.setPersonId(rows.getInt("persn_id"));
