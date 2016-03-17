@@ -201,6 +201,9 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 		public ReservationBean getBooking(int Uid) {
 			int userid = Uid;
 			con = dbConnector();
+			ReservationBean bean = new ReservationBean();
+			
+			//fields names seperately
 			String getBookingQuery = " SELECT * FROM reservation WHERE persn_id = '"+ userid +"' ";
 			
 			try {
@@ -208,6 +211,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 				int i = stmnt.executeUpdate(getBookingQuery);
 				if(i > 0)
 				{
+					//same as below method
 					System.out.println("Retrieved all Bookings");
 				}
 				else

@@ -27,5 +27,23 @@
             method="bookings">
             <result name="success">/viewbookings.jsp</result>
       </action>
+      <action name="createreservation"
+       class="com.reservation.action.BookingAction" 
+            method="login">
+            <result name="success">/newbooking.jsp</result>
+            <result  name= "error">/home.jsp</result>
+      </action>
+      <action name="getbooking"
+       class="com.reservation.action.BookingAction" 
+            method="login">
+            <result name="success">/LatestBookingDetails.jsp</result>
+            <result  name= "error">/home.jsp</result>
+      </action>
+      <action name="cancelreservation"
+       class="com.reservation.action.BookingAction" 
+            method="login">
+            <result name="success">/viewbookings.jsp</result>
+            <result  name= "error">/home.jsp</result>
+      </action>
    </package>
 </struts>

@@ -10,6 +10,7 @@ public class ReservationBean {
 	private String roomType;
 	private int personId;
 	private String status;
+	private int reservationId;
 	public String getStatus() {
 		return status;
 	}
@@ -51,6 +52,12 @@ public class ReservationBean {
 	}
 	public void setRoomType(String roomType) {
 		this.roomType = roomType;
+	}
+	public int getReservationId() {
+		return reservationId;
+	}
+	public void setReservationId(int reservationId) {
+		this.reservationId = reservationId;
 	}
 	
 }
