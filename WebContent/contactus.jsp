@@ -27,14 +27,13 @@
 						<li class="dropdown 218 active"><a href="home.jsp"
 							class="dropdown-toggle disabled active">Home</a></li>
 						<li class="dropdown 1777"><a href="login.jsp"
-							title="" class="dropdown-toggle disabled">Login</a></li>
-						<li class="dropdown 346"><a href="register.jsp"
 							title="" class="dropdown-toggle disabled">Register</a></li>
-						<li class="dropdown 346"><a
-							href="viewbookings.jsp" title=""
-							class="dropdown-toggle disabled">View My Bookings</a></li>
+						<li class="dropdown 346"><a href="viewbookings.action"
+							title="" class="dropdown-toggle disabled">View My Bookings</a></li>
 						<li class="dropdown 346"><a href="aboutus.jsp"
 							title="" class="dropdown-toggle disabled">About Us</a></li>
+						<li class="dropdown 346"><a href="contactus.jsp"
+							title="" class="dropdown-toggle disabled">Contact Us</a></li>
 					</ul>
 				</div>
 			</div>

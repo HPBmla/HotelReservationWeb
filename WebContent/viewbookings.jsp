@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	<%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -27,9 +27,9 @@
 						<li class="dropdown 218 active"><a href="home.jsp"
 							class="dropdown-toggle disabled active">Home</a></li>
 						<li class="dropdown 1777"><a href="login.jsp"
-							title="" class="dropdown-toggle disabled">Login</a></li>
-						<li class="dropdown 346"><a href="register.jsp"
 							title="" class="dropdown-toggle disabled">Register</a></li>
+						<li class="dropdown 346"><a href="viewbookings.action"
+							title="" class="dropdown-toggle disabled">View My Bookings</a></li>
 						<li class="dropdown 346"><a href="aboutus.jsp"
 							title="" class="dropdown-toggle disabled">About Us</a></li>
 						<li class="dropdown 346"><a href="contactus.jsp"
@@ -53,28 +53,28 @@
 						</tr>
 					</thead>
 					<s:iterator value="groupDao.groups" status="groupStatus">
-					<tbody>
-					
-						<tr>
+						<tbody>
 
-							<td><s:property value="name" /></td>
-							<td><s:property value="%{chechinDte}" /> </td>
-							<td> <s:property value="%{chechoutDte}" /> </td>
-						</tr>
-						<tr>
-							<td><s:property value="name" /></td>
-							<td><s:property value="%{chechinDte}" /></td>
-							<td><s:property value="%{chechoutDte}" /></td>
-						</tr>
-						<tr>
-							<td><s:property value="name" /></td>
-							<td><s:property value="%{chechinDte}" /></td>
-							<td><s:property value="%{chechoutDte}" /></td>
+							<tr>
 
-							
-						</tr>
-						
-					</tbody>
+								<td><s:property value="name" /></td>
+								<td><s:property value="%{chechinDte}" /></td>
+								<td><s:property value="%{chechoutDte}" /></td>
+							</tr>
+							<tr>
+								<td><s:property value="name" /></td>
+								<td><s:property value="%{chechinDte}" /></td>
+								<td><s:property value="%{chechoutDte}" /></td>
+							</tr>
+							<tr>
+								<td><s:property value="name" /></td>
+								<td><s:property value="%{chechinDte}" /></td>
+								<td><s:property value="%{chechoutDte}" /></td>
+
+
+							</tr>
+
+						</tbody>
 					</s:iterator>
 				</table>
 			</div>
