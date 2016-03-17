@@ -204,12 +204,23 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 			ReservationBean bean = new ReservationBean();
 			
 			//fields names seperately
-			String getBookingQuery = " SELECT * FROM reservation WHERE persn_id = '"+ userid +"' ";
+			String getBookingQuery = " SELECT checkindate,checkoutdate,noofrooms,noofguests,roomtype,status,personid FROM reservation WHERE persn_id = '"+ userid +"' ";
 			
 			try {
 				stmnt = con.createStatement();
-				int i = stmnt.executeUpdate(getBookingQuery);
-				if(i > 0)
+				rows = pstmnt.executeQuery();
+				while(rows.next()){
+					//user.setFname(rows.getString("fname"));
+					bean.setChechinDte(rows.getDate("checkindate"));
+					bean.setChechoutDte(rows.getDate("checkoutdate"));
+					bean.setNoOfRms(rows.getInt("noofrooms"));
+					bean.setNoOfGuests(rows.getInt("noofguests"));
+					bean.setRoomType(rows.getString("roomtype"));
+					bean.setStatus(rows.getString("status"));
+					bean.setPersonId(rows.getInt("personid"));
+				}
+				//int i = stmnt.executeUpdate(getBookingQuery);
+				/*if(i > 0)
 				{
 					//same as below method
 					System.out.println("Retrieved all Bookings");
@@ -217,12 +228,16 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 				else
 				{
 					System.out.println("Error Retrieving Bookings");
-				}	
+				}	*/
 			} catch (SQLException e) {
 				
 				e.printStackTrace();
 			}
-		return null;
+			finally
+			{
+				closeConnctn(con, rows, stmnt);
+			}
+		return bean;
 		}
 		
 		//update reservation
