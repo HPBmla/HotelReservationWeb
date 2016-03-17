@@ -24,15 +24,15 @@
 				class="block block-system block-menu">
 				<div class="content">
 					<ul class="nav nav-pills nav-main" id="mainMenu">
-						<li class="dropdown 218 active"><a href="WebContent/home.jsp"
+						<li class="dropdown 218 active"><a href="home.jsp"
 							class="dropdown-toggle disabled active">Home</a></li>
-						<li class="dropdown 1777"><a href="WebContent/login.jsp"
+						<li class="dropdown 1777"><a href="login.jsp"
 							title="" class="dropdown-toggle disabled">Login</a></li>
-						<li class="dropdown 346"><a href="WebContent/contactus.jsp"
+						<li class="dropdown 346"><a href="register.jsp"
 							title="" class="dropdown-toggle disabled">Register</a></li>
-						<li class="dropdown 346"><a href="WebContent/newbooking.jsp"
+						<li class="dropdown 346"><a href="aboutus.jsp"
 							title="" class="dropdown-toggle disabled">About Us</a></li>
-						<li class="dropdown 346"><a href="WebContent/aboutus.jsp"
+						<li class="dropdown 346"><a href="contactus.jsp"
 							title="" class="dropdown-toggle disabled">Contact Us</a></li>
 					</ul>
 				</div>
@@ -54,44 +54,31 @@
 					</thead>
 					<s:iterator value="bookingList" status="groupStatus">
 					<tbody>
+					
 						<tr>
+
 							<td><s:property value="name" /></td>
-							<td><s:property value="%{chechinDte}" /></td>
-							<td><s:property value="chechoutDte" /></td>
+							<td><s:property value="%{chechinDte}" /> </td>
+							<td> <s:property value="%{chechoutDte}" /> </td>
 						</tr>
 						<tr>
 							<td><s:property value="name" /></td>
 							<td><s:property value="%{chechinDte}" /></td>
-							<td><s:property value="chechoutDte" /></td>
+							<td><s:property value="%{chechoutDte}" /></td>
 						</tr>
 						<tr>
 							<td><s:property value="name" /></td>
 							<td><s:property value="%{chechinDte}" /></td>
-							<td><s:property value="chechoutDte" /></td>
+							<td><s:property value="%{chechoutDte}" /></td>
+
+							
 						</tr>
+						
 					</tbody>
 					</s:iterator>
 				</table>
 			</div>
 		</div>
-	</div>
-	<div>
-	<p>testing</p>
-	<s:iterator value="bookingList" status="groupStatus">
-   <!--   <tr class="<s:if test="#groupStatus.odd == true ">odd</s:if><s:else>even</s:else>">
-        <td><s:property value="name" /></td>
-        <td><s:property value="description" /></td>
-        <td>
-            <s:iterator value="users" status="userStatus">
-                <s:property value="fullName" /><s:if test="!#userStatus.last">,</s:if>
-            </s:iterator>
-            <s:property value="user.username" />
-        </td>
-    </tr>-->
-    <s:label value="%{personId}"></s:label>
-    <s:label value="%{chechinDte}"></s:label>
-</s:iterator>
-	
 	</div>
 	<!--js files-->
 	<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>

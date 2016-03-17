@@ -29,6 +29,10 @@ public class BookingResource {
 	   
 	}
 	
+/*	@GET
+	@Produces("text/plain")*/
+	
+	
 
 
 	
