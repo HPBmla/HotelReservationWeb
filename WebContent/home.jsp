@@ -97,7 +97,7 @@
 				style="position: absolute; right: 10px; width: 500px; padding: 0px;">
 				<div class="page">
 					<div class="metr">
-						<a href="login.html" class="metrostyle eenmetro"
+						<a href="login.jsp" class="metrostyle eenmetro"
 							style="background-color: #345467; height: 150px; width: 200px; cursor: pointer">
 
 							<span class="fa fa-cogs"
@@ -108,7 +108,7 @@
 							style="color: white; float: left; margin-top: 35px; margin-left: 10px; margin-right: 50px">User
 								LogIn</span>
 
-						</a> <a href="register.html" class="metrostyle eenmetro"
+						</a> <a href="register.jsp" class="metrostyle eenmetro"
 							style="background-color: #101442; height: 150px; width: 200px; cursor: pointer">
 
 							<span class="fa fa-cogs"
@@ -124,14 +124,14 @@
 					<div class="metr">
 						<a class="metrostyle orgmetro"
 							style="background-color: #1f6b65; height: 150px; width: 200px; cursor: pointer"
-							href="newBooking.html"> <span class="fa fa-users"
+							href="newbooking.jsp"> <span class="fa fa-users"
 							style="font-size: 2em; color: white; padding-left: 0.3em; margin-top: 3px; float: left"></span>
 							<span
 							style="color: white; font-size: 1.1em; float: right; margin-top: 5px; padding-right: 0.2em"></span>
 							<span
-							style="color: white; float: left; margin-top: 35px; margin-left: 10px; margin-right: 80px">New
-								Booking</span>
-						</a> <a href="viewBookings.html" class="metrostyle eenmetro"
+							style="color: white; float: left; margin-top: 35px; margin-left: 10px; margin-right: 80px">
+								New Booking</span>
+						</a> <a href="viewbookings.jsp" class="metrostyle eenmetro"
 							style="background-color: #393551; height: 150px; width: 200px; cursor: pointer">
 
 							<span class="fa fa-cogs"
@@ -140,7 +140,7 @@
 							style="color: white; font-size: 1.1em; float: right; margin-top: 5px; padding-right: 0.2em"></span>
 							<span
 							style="color: white; float: left; margin-top: 35px; margin-left: 10px; margin-right: 50px">View
-								My Bookings</span>
+								View Bookings</span>
 
 						</a>
 					</div>
@@ -152,7 +152,7 @@
                             </a>
                         </div>-->
 					<div class="metr">
-						<a href="aboutUs.html" class="metrostyle eenmetro"
+						<a href="aboutus.jsp" class="metrostyle eenmetro"
 							style="background-color: #1d4e7a; height: 150px; width: 200px; cursor: pointer">
 
 							<span class="fa fa-cogs"
@@ -163,7 +163,7 @@
 							style="color: white; float: left; margin-top: 35px; margin-left: 10px; margin-right: 50px">About
 								Us</span>
 
-						</a> <a href="contactUs.html" class="metrostyle eenmetro"
+						</a> <a href="contactus.jsp" class="metrostyle eenmetro"
 							style="background-color: #345467; height: 150px; width: 200px; cursor: pointer">
 
 							<span class="fa fa-cogs"
