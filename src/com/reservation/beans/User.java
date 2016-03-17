@@ -12,6 +12,14 @@ public class User {
 	private String add2;
 	private String add3;
 	private int telNum;
+	private int userId;
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
 	private String nic;
 	private String userType;
 	public User()

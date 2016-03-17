@@ -27,16 +27,16 @@
 				class="block block-system block-menu">
 				<div class="content">
 					<ul class="nav nav-pills nav-main" id="mainMenu">
-						<li class="dropdown 218 active"><a href="home.jsp"
+						<li class="dropdown 218 active"><a href="WebContent/home.jsp"
 							class="dropdown-toggle disabled active">Home</a></li>
-						<li class="dropdown 1777"><a href="register.jsp"
+						<li class="dropdown 1777"><a href="WebContent/login.jsp"
 							title="" class="dropdown-toggle disabled">Register</a></li>
 						<li class="dropdown 346"><a
-							href="viewbookings.jsp" title=""
+							href="viewbookings.action" title=""
 							class="dropdown-toggle disabled">View My Bookings</a></li>
-						<li class="dropdown 346"><a href="aboutus.jsp"
+						<li class="dropdown 346"><a href="WebContent/aboutus.jsp"
 							title="" class="dropdown-toggle disabled">About Us</a></li>
-						<li class="dropdown 346"><a href="contactus.jsp"
+						<li class="dropdown 346"><a href="WebContent/contactus.jsp"
 							title="" class="dropdown-toggle disabled">Contact Us</a></li>
 					</ul>
 				</div>
@@ -61,7 +61,7 @@
 											to access your account:</p>
 										<div class="well">
 											<form id="loginForm" novalidate="novalidate"
-												action="hr/login" method="post">
+												action="login.action" method="post" theme="css_xhtml">
 												<div class="form-group">
 													<div class="input-group">
 														<span class="input-group-addon" id="UserEmail"><i

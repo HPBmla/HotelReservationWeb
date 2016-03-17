@@ -16,29 +16,6 @@
 </head>
 <body>
 	<div class="container">
-		<nav class="nav-main">
-		<div class="region region-header-menu">
-			<div id="block-system-main-menu"
-				class="block block-system block-menu">
-				<div class="content">
-					<ul class="nav nav-pills nav-main" id="mainMenu">
-						<li class="dropdown 218 active"><a href="home.jsp"
-							class="dropdown-toggle disabled active">Home</a></li>
-						<li class="dropdown 1777"><a href="login.jsp" title=""
-							class="dropdown-toggle disabled">Login</a></li>
-						<li class="dropdown 346"><a href="viewbookings.jsp" title=""
-							class="dropdown-toggle disabled">View My Bookings</a></li>
-						<li class="dropdown 346"><a href="aboutus.jsp" title=""
-							class="dropdown-toggle disabled">About Us</a></li>
-						<li class="dropdown 346"><a href="contactus.jsp" title=""
-							class="dropdown-toggle disabled">Contact Us</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		</nav>
-	</div>
-	<div class="container">
 		<div class="col-md-12">
 			<div id="SignUpForm" class="modal-dialog">
 				<div class="modal-content">

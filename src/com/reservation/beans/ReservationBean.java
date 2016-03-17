@@ -3,28 +3,35 @@ package com.reservation.beans;
 import java.util.Date;
 
 public class ReservationBean {
-	private String chechinDte;
-	private String chechoutDte;
+	private Date chechinDte;
+	private Date chechoutDte;
 	private int noOfRms;
 	private int noOfGuests;
 	private String roomType;
 	private int personId;
+	private String status;
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	public int getPersonId() {
 		return personId;
 	}
 	public void setPersonId(int personId) {
 		this.personId = personId;
 	}
-	public String getChechinDte() {
+	public Date getChechinDte() {
 		return chechinDte;
 	}
-	public void setChechinDte(String chechinDte) {
+	public void setChechinDte(Date chechinDte) {
 		this.chechinDte = chechinDte;
 	}
-	public String getChechoutDte() {
+	public Date getChechoutDte() {
 		return chechoutDte;
 	}
-	public void setChechoutDte(String chechoutDte) {
+	public void setChechoutDte(Date chechoutDte) {
 		this.chechoutDte = chechoutDte;
 	}
 	public int getNoOfRms() {

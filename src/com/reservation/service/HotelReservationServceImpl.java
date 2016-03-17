@@ -11,8 +11,11 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 
 	
 	HotelReservationDAOImpl dbcon = new HotelReservationDAOImpl();
+	User user = new User();
+	
 	@Override
 	public int login(String username, String passwrd) {
+		int i = 0;
 		if(username.isEmpty() || passwrd.isEmpty())
 		{
 			System.out.print(" Enter username and password ");
@@ -20,13 +23,13 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 		}
 		else
 		{
-		int i =	dbcon.login(username, passwrd);
+		 i =	dbcon.login(username, passwrd);
 		
 		}
 		
 		
 		//dbcon.dbConnector();
-		return 0;
+		return i;
 	}
 
 	@Override
@@ -103,7 +106,7 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 		
 		for(ReservationBean resrvation : indvidualBookingList)
 		{
-			System.out.println(resrvation.getNoOfRms());
+			System.out.println(resrvation.getChechinDte());
 		}
 			
 			
@@ -157,7 +160,7 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 		//return dbcon.getBooking(Uid);
 	}
 
-	/*@Override
+	@Override
 	public String UpdateReservation(ReservationBean bean) {
 		// TODO Auto-generated method stub
 		String i = null;
@@ -186,7 +189,7 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 			 i = dbcon.updateReservation(bean);
 		}
 		return "success";
-	}*/
+	}
 
 	@Override
 	public boolean cancelResrvtn(int resrvtnId) {
@@ -234,11 +237,6 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 		HotelReservationDAOImpl db = new HotelReservationDAOImpl();
 		db.dbConnector();
 		
-	}
-
-	public String UpdateReservation(ReservationBean bean) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 	
 }
