@@ -16,7 +16,7 @@ public interface IHotelReservationService {
 	
 	public String createReservation(ReservationBean bean);
 	public ReservationBean getBooking (int Uid);
-	public String UpdateReservation(ReservationBean bean);
+	//public String UpdateReservation(ReservationBean bean);
 	
 	public boolean cancelResrvtn(int resrvtnId);
 	//public boolean changeCredentials(User user);
