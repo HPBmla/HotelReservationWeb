@@ -4,12 +4,10 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-import com.reservation.beans.User;
 import com.reservation.service.HotelReservationServceImpl;
 
 @Path("/abc")
 public class BookingResource {
-	User user = new User();
 	
 	@GET
 	@Produces("text/plain")
@@ -18,22 +16,24 @@ public class BookingResource {
 	    System.out.println("correct");
 		return "Hello world";
 	}
-	@GET
-	@Produces("text/pliain")
-		public User login()
+	
+/*	public int login()
 	{
 	   HotelReservationServceImpl serviceLogin = new HotelReservationServceImpl();
 	   
-	   serviceLogin.login(user.getUsername(), user.getPassword());
-	   return user;
+	   serviceLogin.login(username, passwrd);
 	   
 	}
+<<<<<<< HEAD
 	
 /*	@GET
 	@Produces("text/plain")*/
 	
 	
 
+=======
+ */
+>>>>>>> origin/master
 
 	
 

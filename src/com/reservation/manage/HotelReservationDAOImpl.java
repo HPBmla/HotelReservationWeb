@@ -8,6 +8,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
@@ -65,7 +68,6 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
             }
 
             if (count == 1) {
-            	
                 System.out.println("granted");
 
             } else if (count > 0) {
@@ -79,10 +81,6 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        finally
-        {
-        	closeConnctn(con, rows, stmnt);
-        }
      /*   try {
 			//con.close();
 		} catch (SQLException e) {
@@ -90,37 +88,9 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 			e.printStackTrace();
 		}*/
 
-        
-        return count;
+        return 1;
     }
-     public User getUser(String username)
-     {
-    	 String query = "select user_id,fname,lname,tel_num,nic from user where username='"+username+"'";
-    	 User user = new User();
-    	 con = dbConnector();
-    	 try {
-			stmnt = con.createStatement();
-			rows = stmnt.executeQuery(query);
-			while(rows.next())
-			{
-				user.setUserId(rows.getInt("user_id"));
-			    user.setFname(rows.getString("fname"));
-			    user.setLname(rows.getString("lname"));
-			    user.setNic(rows.getString("nic"));
-			    user.setTelNum(rows.getInt("tel_num"));
-				
-			}
-	    	 
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-         finally
-         {
-        	 closeConnctn(con, rows, stmnt);
-         }
-    	 return user;
-     }
+
 	@Override
 	public int userRegistration(User user) {
 		//user.setFname();
@@ -158,19 +128,25 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 			
 			e.printStackTrace();
 		}
-		finally
-		{
-			closeConnctn(con, rows, stmnt);
-		}
 		
 		return 1;
 	}
 	
 	//create reservation
 		public String createReservation(ReservationBean bean) {
+			DateFormat df = new SimpleDateFormat("MM/dd/yyyy"); 
+			//Date startDate = df.parse(bean.getChechinDte());
 			
-			Date chechinDte = bean.getChechinDte();
-			Date chechoutDte = bean.getChechoutDte();
+			Date chechinDte = null;
+			Date chechoutDte = null;
+			try {
+				chechinDte = df.parse(bean.getChechinDte());
+				chechoutDte = df.parse(bean.getChechoutDte());
+			} catch (ParseException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
 			int noOfRms = bean.getNoOfRms();
 			int noOfGuests = bean.getNoOfGuests();
 			String roomType = bean.getRoomType();
@@ -221,7 +197,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 		return null;
 		}
 		
-		//update reservation
+		/*//update reservation
 		public String updateReservation(ReservationBean bean){
 			con = dbConnector();
 			Date chechinDte = bean.getChechinDte();
@@ -248,7 +224,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 				e.printStackTrace();
 			}
 			return "success";
-		}
+		}*/
 	
 	//cancel reservation
 		public boolean cancelResrvtn(int resrvtnId) {
@@ -498,7 +474,24 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 		}
 		finally
 		{
-			closeConnctn(con, rows, stmnt);
+			if(rows != null)
+			{
+				try {
+					rows.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			if(con != null)
+			{
+				try {
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
 		}
 		return user;
 	}
@@ -515,8 +508,8 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
  resrveBean = new ArrayList<ReservationBean>();
 			while(rows.next())
 			{
-				reservation.setChechinDte(rows.getDate("checkin_date"));
-				reservation.setChechoutDte(rows.getDate("checkout_date"));
+				reservation.setChechinDte(rows.getString("checkin_date"));
+				reservation.setChechoutDte(rows.getString("checkout_date"));
 				reservation.setNoOfRms(rows.getInt("no_of_rooms"));
 				reservation.setNoOfGuests(rows.getInt("guests"));
 				reservation.setPersonId(rows.getInt("persn_id"));
@@ -529,7 +522,24 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 		}
 		finally
 		{
-			closeConnctn(con, rows, stmnt);
+			if(rows != null)
+			{
+				try {
+					rows.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			if(con != null)
+			{
+				try {
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
 		}
 		
 		return resrveBean;
@@ -537,32 +547,54 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 	
 	public List<ReservationBean> getAllBookings(int UsrId)
 	{
-		String getReservtbQuery = "select checkin_date,checkout_date,persn_id,status from reservation where persn_id='"+UsrId+"'";
+		String getReservtbQuery = "select checkin_date,checkout_date,no_of_rooms,guests,persn_id,room_type from reservation where persn_id='"+UsrId+"'";
 		con = dbConnector();
 		ReservationBean reservtn = null;
 		List<ReservationBean> resrveBean = null ;
 		try {
 			pstmnt = con.prepareStatement(getReservtbQuery);
 			rows = pstmnt.executeQuery();
-            resrveBean = new ArrayList<ReservationBean>();
+ resrveBean = new ArrayList<ReservationBean>();
 			while(rows.next())
 			{
+<<<<<<< HEAD
 				reservtn = new ReservationBean();
 				reservtn.setChechinDte(rows.getDate("checkin_date"));
 				reservtn.setChechoutDte(rows.getDate("checkout_date"));
+=======
+				reservtn.setChechinDte(rows.getString("checkin_date"));
+				reservtn.setChechoutDte(rows.getString("checkout_date"));
+				reservtn.setNoOfRms(rows.getInt("no_of_rooms"));
+				reservtn.setNoOfGuests(rows.getInt("guests"));
+>>>>>>> origin/master
 				reservtn.setPersonId(rows.getInt("persn_id"));
-				reservtn.setStatus(rows.getString("status"));
-				
+				reservtn.setRoomType(rows.getString("room_type"));
 				resrveBean.add(reservtn);
 			}
-			System.out.println(resrveBean.size());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		finally
 		{
-			closeConnctn(con, rows, stmnt);
+			if(rows != null)
+			{
+				try {
+					rows.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			if(con != null)
+			{
+				try {
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
 		}
 		
 		return resrveBean;
@@ -594,30 +626,5 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 		
 		
 		return hashVal.toString();
-	}
-	
-	private void closeConnctn(Connection con, ResultSet rs, Statement stmnt)
-	{
-		if(rs != null)
-		{
-			try {
-				rs.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		if(con != null)
-		{
-			try {
-				con.close();
-				
-				//stmnt.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		
 	}
 }
