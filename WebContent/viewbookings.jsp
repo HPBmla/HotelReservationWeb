@@ -57,17 +57,17 @@
 						<tr>
 							<td><s:property value="name" /></td>
 							<td><s:property value="%{chechinDte}" /></td>
-							<td><s:property value="chechoutDte" /></td>
+							<td><s:property value="%{chechoutDte}" /></td>
 						</tr>
 						<tr>
 							<td><s:property value="name" /></td>
 							<td><s:property value="%{chechinDte}" /></td>
-							<td><s:property value="chechoutDte" /></td>
+							<td><s:property value="%{chechoutDte}" /></td>
 						</tr>
 						<tr>
 							<td><s:property value="name" /></td>
 							<td><s:property value="%{chechinDte}" /></td>
-							<td><s:property value="chechoutDte" /></td>
+							<td><s:property value="%{chechoutDte}" /></td>
 						</tr>
 					</tbody>
 					</s:iterator>
