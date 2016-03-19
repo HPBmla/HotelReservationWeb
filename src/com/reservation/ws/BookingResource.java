@@ -1,17 +1,19 @@
 package com.reservation.ws;
 
+import java.awt.PageAttributes.MediaType;
 import java.util.List;
 
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-
 import javax.ws.rs.Produces;
 
 import com.reservation.beans.ReservationBean;
 import com.reservation.beans.User;
 import com.reservation.service.HotelReservationServceImpl;
 
-@Path("/abc")
+@Path("/")
 public class BookingResource {
 	User user = new User();
 	
@@ -22,17 +24,19 @@ public class BookingResource {
 	    System.out.println("correct");
 		return "Hello world";
 	}
-	@GET
+	@POST
 	@Path("/login")
 	@Produces("text/plain")
-		public int login()
+		public int login(@FormParam("username") String usrnme, @FormParam("password") String psswrd)
 	{
+		System.out.println("method invoked");
 	   HotelReservationServceImpl serviceLogin = new HotelReservationServceImpl();
 	   
-	  int i = serviceLogin.login(user.getUsername(), user.getPassword());
+	  int i = serviceLogin.login(usrnme, psswrd);
 	   return i;
 	   
 	}
+	
 	
 	@GET
 	@Path("/register")
