@@ -22,7 +22,7 @@ public class LoginAction {
 	
 	 public String login() 
 	   {
-		   
+		   System.out.println("connec");
 		   if(user!= null)
 		   {
 			   System.out.println(""+user.getUsername());
