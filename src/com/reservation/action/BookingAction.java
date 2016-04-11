@@ -39,8 +39,8 @@ public class BookingAction extends ActionSupport implements SessionAware {
 		 * loginUser.getUsername(); loginUser.setPassword("1234"); String psswrd
 		 * = loginUser.getPassword(); 
 		 */
-		 service.connection();
-		 System.out.println("hellow world!!!!"+name);
+		// service.connection();
+		// System.out.println("hellow world!!!!"+name);
 		 /*
 		 * service.login(username, psswrd);
 		 * //service.userRegistration(loginUser); User userDetail = new User();
@@ -51,16 +51,9 @@ public class BookingAction extends ActionSupport implements SessionAware {
 		 * List<User> details = new ArrayList<User>(); details.add(userDetail);
 		 * // service.getAllBookings(); service.getAllBookings(1);
 		 */
-		boolean var = service.cancelResrvtn(2);
-		if(var = true)
-		{
-			System.out.println("delete success");
-		}
-		else{
-			System.out.println("delete fail");
-		}
 		
-		//return "success";
+		
+		return "success";
 
 	}
 
