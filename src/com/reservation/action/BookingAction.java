@@ -37,8 +37,11 @@ public class BookingAction extends ActionSupport implements SessionAware {
 		 * ,"1234",0112233456,"true","342134567v");
 		 * loginUser.setUsername("bimla"); String username =
 		 * loginUser.getUsername(); loginUser.setPassword("1234"); String psswrd
-		 * = loginUser.getPassword(); // service.connection();
-		 * //System.out.println("hellow world!!!!"+name);
+		 * = loginUser.getPassword(); 
+		 */
+		 service.connection();
+		 System.out.println("hellow world!!!!"+name);
+		 /*
 		 * service.login(username, psswrd);
 		 * //service.userRegistration(loginUser); User userDetail = new User();
 		 * 

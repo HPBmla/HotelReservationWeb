@@ -17,7 +17,7 @@
             <result name="success">/newbooking.jsp</result>
             <result  name= "error">/login.jsp</result>
       </action>
-        <action name="register"
+       <action name="register"
        class="com.reservation.action.LoginAction" 
             method="register">
             <result name="success">/login.jsp</result>
