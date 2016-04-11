@@ -51,7 +51,16 @@ public class BookingAction extends ActionSupport implements SessionAware {
 		 * List<User> details = new ArrayList<User>(); details.add(userDetail);
 		 * // service.getAllBookings(); service.getAllBookings(1);
 		 */
-		return "success";
+		boolean var = service.cancelResrvtn(2);
+		if(var = true)
+		{
+			System.out.println("delete success");
+		}
+		else{
+			System.out.println("delete fail");
+		}
+		
+		//return "success";
 
 	}
 
@@ -137,6 +146,7 @@ public class BookingAction extends ActionSupport implements SessionAware {
 	}
 
 	public String createReservation() {
+		service.getBooking(user.getUserId());
 		if (bean != null) {
 
 			System.out.println("" + bean.getChechinDte());
@@ -144,6 +154,8 @@ public class BookingAction extends ActionSupport implements SessionAware {
 			System.out.println("" + bean.getNoOfRms());
 			System.out.println("" + bean.getNoOfGuests());
 			System.out.println("" + bean.getRoomType());
+			System.out.println("" + bean.getStatus());
+			System.out.println("" + bean.getPersonId());
 
 			service.createReservation(bean);
 

@@ -24,14 +24,14 @@
 					<ul class="nav nav-pills nav-main" id="mainMenu">
 						<li class="dropdown 218 active"><a href="home.jsp"
 							class="dropdown-toggle disabled active">Home</a></li>
-						<li class="dropdown 1777"><a href="login.jsp"
-							title="" class="dropdown-toggle disabled">Register</a></li>
+						<li class="dropdown 1777"><a href="login.jsp" title=""
+							class="dropdown-toggle disabled">Register</a></li>
 						<li class="dropdown 346"><a href="viewbookings.action"
 							title="" class="dropdown-toggle disabled">View My Bookings</a></li>
-						<li class="dropdown 346"><a href="aboutus.jsp"
-							title="" class="dropdown-toggle disabled">About Us</a></li>
-						<li class="dropdown 346"><a href="contactus.jsp"
-							title="" class="dropdown-toggle disabled">Contact Us</a></li>
+						<li class="dropdown 346"><a href="aboutus.jsp" title=""
+							class="dropdown-toggle disabled">About Us</a></li>
+						<li class="dropdown 346"><a href="contactus.jsp" title=""
+							class="dropdown-toggle disabled">Contact Us</a></li>
 					</ul>
 				</div>
 			</div>
@@ -39,113 +39,97 @@
 		</nav>
 	</div>
 	<div class="container">
-		<div class="col-md-12">
-			<div id="SignUpForm" class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h3 class="modal-title" id="myModalLabel">
-							<i class="fa fa-user"></i> New Booking
-						</h3>
-					</div>
-					<div class="modal-body">
-						<div class="row">
-							<div class="col-xs-6">
-								<div class="well">
-									<div
-										class="padding-top-and-bottom-fiftheen-px align-text-center hidden-sm hidden-xs">
-										<i class="fa fa-user"
-											style="width: 65px; height: 65px; font-size: 45px; margin: 0 auto 8px; padding-top: 7px; padding-left: 13px; display: block; border: solid 1px #CDCDCD; color: #CECECE; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%;"></i>
-									</div>
-									<form id="NewAccountForm" novalidate="novalidate">
-										<div class="form-group">
-											<div class="input-group">
-												<span class="input-group-addon" id="UserEmail"><i
-													class="fa fa-user" title="Select Your Checking Date"></i></span> <input
-													type="email" class="form-control" id="chkindate"
-													name="chkindate" value="" required
-													title="Select Your Checking Date"
-													placeholder="Select Your Checking Date" /> <span
-													class="input-group-addon" id="chkindate"><a
-													href="#UserEmailLightbox" data-toggle="modal"><i
-														class="fa fa-question-circle"></i></a></span>
-											</div>
-											<span class="help-block"></span>
-										</div>
-										<div class="form-group">
-											<div class="input-group">
-												<span class="input-group-addon" id="UserEmail"><i
-													class="fa fa-user" title="Select Your Checkout Date"></i></span> <input
-													type="email" class="form-control" id="chkoutdate"
-													name="chkoutdate" value="" required
-													title="Select Your Checkout Date"
-													placeholder="Select Your Checkout Date" /> <span
-													class="input-group-addon" id="chkoutdate"><a
-													href="#UserEmailLightbox" data-toggle="modal"><i
-														class="fa fa-question-circle"></i></a></span>
-											</div>
-											<span class="help-block"></span>
-										</div>
-										<div class="form-group">
-											<div class="input-group">
-												<span class="input-group-addon" id="nrooms"><i
-													class="fa fa-unlock-alt" title="No of Rooms"></i></span> <input
-													type="text" class="form-control" id="nrooms"
-													name="password" value="" required title="No of Rooms"
-													placeholder="No of Rooms" /> <span
-													class="input-group-addon" id="nrooms"><a
-													href="#CVVLightbox" data-toggle="modal"><i
-														class="fa fa-question-circle"></i></a></span>
-											</div>
-											<span class="help-block"></span>
-										</div>
-										<div class="form-group">
-											<div class="input-group">
-												<span class="input-group-addon" id="UserPassword"><i
-													class="fa fa-unlock-alt" title="No of Guests"></i></span> <input
-													type="password" class="form-control" id="nguests"
-													name="nguests" value="" required title="No of Guests"
-													placeholder="No of Guests" /> <span
-													class="input-group-addon" id="nguests"><a
-													href="#CVVLightbox" data-toggle="modal"><i
-														class="fa fa-question-circle"></i></a></span>
-											</div>
-											<span class="help-block"></span>
-										</div>
-										<div class="form-group">
-											<div class="input-group">
-												<span class="input-group-addon" id="UserPasswordMatch"><i
-													class="fa fa-lock" title="Choose Room Type"></i></span> <input
-													type="password" class="form-control" id="rtype"
-													name="rtype" value="" required title="Choose Room Type"
-													placeholder="Choose Room Type" /> <span
-													class="input-group-addon" id="rtype"><a
-													href="#CVVLightbox" data-toggle="modal"><i
-														class="fa fa-question-circle"></i></a></span>
-											</div>
-										</div>
-										<button type="submit" class="btn btn-success btn-block">Submit</button>
-									</form>
-								</div>
-							</div>
-							<div class="col-xs-6">
-								<p class="lead">New Booking Requirements</p>
-								<ul class="list-unstyled small" style="line-height: 2">
-									<li><span class="fa fa-check text-success"></span> Provide
-										a valid email account</li>
-									<li><span class="fa fa-check text-success"></span>
-										Password must have 1 upper-case letter (A-Z)</li>
-									<li><span class="fa fa-check text-success"></span> It must
-										have 1 lower-case letter (a-z)</li>
-									<li><span class="fa fa-check text-success"></span> Be at
-										least 1 number (0-9)</li>
-									<li><span class="fa fa-check text-success"></span> It must
-										be between 8-19 characters</li>
-									<li><span class="fa fa-check text-success"></span> Spaces
-										& symbols (! @ # $ % ^ & * _)</span></li>
-								</ul>
-							</div>
+		<div id="signupbox" style="margin-top: 50px"
+			class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<div class="panel-title">New Reservation
+						<div class="form-group" style="float:right;">
+							<!-- Button -->
+							<button id="addBooking" type="button" class="btn btn-info">
+							Save Booking
+							</button>
 						</div>
 					</div>
+					<br />
+				</div>
+				<div class="panel-body">
+					<form id="signupform" class="form-horizontal" role="form"
+						action="createreservation.action" method="post" theme="css_xhtml">
+						<div id="signupalert" style="display: none"
+							class="alert alert-danger">
+							<p>Error:</p>
+							<span></span>
+						</div>
+						<!-- ><div class="form-group">
+							<label for="Date" class="col-md-3 control-label">Checking
+								Date</label>
+							<div class="col-md-9">
+								<input id="Text2" type="text" class="form-control"
+									name="bean.chechinDte">
+							</div>
+						</div> -->
+						<!--<div class="form-group">
+							<label for="Date" class="col-md-3 control-label">Checkout
+								Date</label>
+							<div class="col-md-9">
+								<input id="Text1" type='text' class="form-control"
+									name="bean.chechoutDte" />
+							</div>
+							<label for="codate" class="col-md-3 control-label">Checkout
+								Date</label>
+							<div class="col-md-9">
+								<input type="text" class="form-control" name="bean.chechoutDte"
+									placeholder="Checkout Date">
+							</div> 
+						</div>-->
+						<div class="form-group">
+							<label for="rooms" class="col-md-3 control-label">No Of
+								Rooms</label>
+							<div class="col-md-9">
+								<input type="text" class="form-control" name="bean.noOfRms"
+									placeholder="No Of Rooms">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="guests" class="col-md-3 control-label">No Of
+								Guests</label>
+							<div class="col-md-9">
+								<input type="text" class="form-control" name="bean.noOfGuests"
+									placeholder="No Of Guests">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="rtype" class="col-md-3 control-label">Choose
+								Room Type</label>
+							<div class="col-md-9">
+								<input type="text" class="form-control" name="bean.roomType"
+									placeholder="Choose Room Type">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="Date" class="col-md-3 control-label">Checking
+										Date</label>
+									<div class="col-md-9">
+										<input id="Text2" type="text" class="form-control"
+											name="bean.chechinDte">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="Date" class="col-md-3 control-label">Checkout
+										Date</label>
+									<div class="col-md-9">
+										<input id="Text1" type='text' class="form-control"
+											name="bean.chechoutDte" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -155,6 +139,18 @@
 	<script src="js/bootstrap.js" type="text/javascript"></script>
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="js/npm.js" type="text/javascript"></script>
+	<script src="js/dcalendarpicker.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$.ajax({}).done(function() {
+			$('#calendar-demo').dcalendar();
+			$('#Text1').dcalendarpicker({
+				format : 'yyyy-mm-dd'
+			});
+			$('#Text2').dcalendarpicker({
+				format : 'yyyy-mm-dd'
+			});
+		});
+	</script>
 	<!--/js files-->
 </body>
 </html>
