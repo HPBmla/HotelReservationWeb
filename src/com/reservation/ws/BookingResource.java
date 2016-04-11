@@ -53,9 +53,10 @@ public class BookingResource {
 	}
 	
 	
-	@GET
+	@POST
 	@Path("/register")
-	@Produces("text/plain")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
     public int registration()
 	{
 		HotelReservationServceImpl serviceRegistr = new HotelReservationServceImpl();
@@ -65,8 +66,9 @@ public class BookingResource {
 	
 	@GET
 	@Path("/viewBooking")
-	@Produces("text/plain")
-	public List<ReservationBean> getAllBookings()
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<ReservationBean> getAllBookings(@QueryParam("userId") String id)
 	{
 		HotelReservationServceImpl serviceBookings = new HotelReservationServceImpl();
 		List<ReservationBean> resrvation = serviceBookings.getAllBookings(user.getUserId());

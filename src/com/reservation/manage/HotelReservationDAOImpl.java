@@ -121,6 +121,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
          }
     	 return user;
      }
+     
 	@Override
 	public int userRegistration(User user) {
 		//user.setFname();
