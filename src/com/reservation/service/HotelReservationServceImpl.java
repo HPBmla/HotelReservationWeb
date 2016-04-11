@@ -194,9 +194,9 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 	@Override
 	public boolean cancelResrvtn(int resrvtnId) {
 		// TODO Auto-generated method stub
-		if(resrvtnId==(int)resrvtnId)
+		if(resrvtnId == 0)
 		{
-			System.out.print(" Please select a Reservation ");	
+			System.out.print(" Please select a Reservation id");	
 		}
 		else
 		{
