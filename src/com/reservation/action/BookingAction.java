@@ -39,8 +39,8 @@ public class BookingAction extends ActionSupport implements SessionAware {
 		 * loginUser.getUsername(); loginUser.setPassword("1234"); String psswrd
 		 * = loginUser.getPassword(); 
 		 */
-		 service.connection();
-		 System.out.println("hellow world!!!!"+name);
+		// service.connection();
+		// System.out.println("hellow world!!!!"+name);
 		 /*
 		 * service.login(username, psswrd);
 		 * //service.userRegistration(loginUser); User userDetail = new User();
@@ -51,6 +51,8 @@ public class BookingAction extends ActionSupport implements SessionAware {
 		 * List<User> details = new ArrayList<User>(); details.add(userDetail);
 		 * // service.getAllBookings(); service.getAllBookings(1);
 		 */
+		
+		
 		return "success";
 
 	}
@@ -146,6 +148,7 @@ public class BookingAction extends ActionSupport implements SessionAware {
 	}
 
 	public String createReservation() {
+		service.getBooking(user.getUserId());
 		if (bean != null) {
 
 			System.out.println("" + bean.getChechinDte());
@@ -153,6 +156,8 @@ public class BookingAction extends ActionSupport implements SessionAware {
 			System.out.println("" + bean.getNoOfRms());
 			System.out.println("" + bean.getNoOfGuests());
 			System.out.println("" + bean.getRoomType());
+			System.out.println("" + bean.getStatus());
+			System.out.println("" + bean.getPersonId());
 
 			service.createReservation(bean);
 

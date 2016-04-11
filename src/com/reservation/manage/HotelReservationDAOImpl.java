@@ -121,6 +121,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
          }
     	 return user;
      }
+     
 	@Override
 	public int userRegistration(User user) {
 		//user.setFname();
@@ -174,22 +175,37 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 			int noOfRms = bean.getNoOfRms();
 			int noOfGuests = bean.getNoOfGuests();
 			String roomType = bean.getRoomType();
+			int personId = bean.getPersonId();
+			String status = bean.getStatus();
 			
+			String addSql = " INSERT INTO reservation (checkin_date,chechout_date,persn_id,status) "+ 
+					"values "+ "('"+ chechinDte +"','"+ chechoutDte +"','"+ personId +"','"+ status +"')";
+			String addnewSql = " INSERT INTO room (no_of_rms,no_of_guests,room_type) "+
+					"values "+ "('"+ noOfRms +"','"+ noOfGuests +"','"+ roomType +"')";
 			
-			String addSql = " INSERT INTO reservation (checkin_date,chechout_date,no_of_rooms,guests,room_type) "+ 
-					"values "+ "('"+ chechinDte +"','"+ chechoutDte +"','"+ noOfRms +"','"+ noOfGuests +"','"+ roomType +"')";
+			/*String addSql = " INSERT INTO reservation (checkin_date,chechout_date,no_of_rooms,guests,room_type) "+ 
+					"values "+ "('"+ chechinDte +"','"+ chechoutDte +"','"+ noOfRms +"','"+ noOfGuests +"','"+ roomType +"')";*/
 			try {
 				con = dbConnector();
 				stmnt = con.createStatement();
 				int i = stmnt.executeUpdate(addSql);
+				int j = stmnt.executeUpdate(addnewSql);
 				if(i > 0)
 				{
-					System.out.println("New Reservation Inserted");
+					System.out.println("New Reservation Inserted into reservation table");
 				}
 				else
 				{
-					System.out.println("Error inserting new Reservation");
-				}	
+					System.out.println("Error inserting new Reservation into reservation tbl");
+				}
+				if(j > 0)
+				{
+					System.out.println("New Reservation Inserted into room table");
+				}
+				else
+				{
+					System.out.println("Error inserting new Reservation into room tbl");
+				}
 			} catch (SQLException e) {
 				
 				e.printStackTrace();
@@ -271,6 +287,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 	
 	//cancel reservation
 		public boolean cancelResrvtn(int resrvtnId) {
+			System.out.println("method calling");
 			con = dbConnector();
 			String canclResQuery = " DELETE FROM reservation WHERE res_id = '"+ resrvtnId +"' ";
 			try
@@ -570,7 +587,6 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 				reservtn.setChechoutDte(rows.getDate("checkout_date"));
 				reservtn.setPersonId(rows.getInt("persn_id"));
 				reservtn.setStatus(rows.getString("status"));
-				
 				resrveBean.add(reservtn);
 			}
 			System.out.println(resrveBean.size());

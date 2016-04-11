@@ -196,7 +196,11 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 		// TODO Auto-generated method stub
 		if(resrvtnId == 0)
 		{
+<<<<<<< HEAD
 			System.out.print(" Please select a Reservation id");	
+=======
+			System.out.print(" Please select a valid Reservation id");	
+>>>>>>> origin/master
 		}
 		else
 		{
