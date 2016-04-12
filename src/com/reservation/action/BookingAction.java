@@ -37,11 +37,11 @@ public class BookingAction extends ActionSupport implements SessionAware {
 		 * ,"1234",0112233456,"true","342134567v");
 		 * loginUser.setUsername("bimla"); String username =
 		 * loginUser.getUsername(); loginUser.setPassword("1234"); String psswrd
-		 * = loginUser.getPassword(); 
+		 * = loginUser.getPassword();
 		 */
 		// service.connection();
 		// System.out.println("hellow world!!!!"+name);
-		 /*
+		/*
 		 * service.login(username, psswrd);
 		 * //service.userRegistration(loginUser); User userDetail = new User();
 		 * 
@@ -51,8 +51,7 @@ public class BookingAction extends ActionSupport implements SessionAware {
 		 * List<User> details = new ArrayList<User>(); details.add(userDetail);
 		 * // service.getAllBookings(); service.getAllBookings(1);
 		 */
-		
-		
+
 		return "success";
 
 	}
@@ -60,20 +59,6 @@ public class BookingAction extends ActionSupport implements SessionAware {
 	public String login() {
 
 		if (user != null) {
-			System.out.println("hello");
-			//working
-			boolean var = service.cancelResrvtn(2);
-			if(var = true)
-			{
-				System.out.println("delete success");
-			}
-			else{
-				System.out.println("delete fail");
-			}
-			//working
-			service.createReservation(bean);
-			
-			
 			System.out.println("" + user.getUsername());
 			System.out.println("" + user.getPassword());
 			int value = service.login(user.getUsername(), user.getPassword());
@@ -86,7 +71,6 @@ public class BookingAction extends ActionSupport implements SessionAware {
 		} else {
 			return "error";
 		}
-
 	}
 
 	public String register() {
@@ -184,12 +168,12 @@ public class BookingAction extends ActionSupport implements SessionAware {
 		}
 		return "success";
 	}
-	
-	public String cancelResrvtn(){
-		if(bean != null){
+
+	public String cancelResrvtn() {
+		if (bean != null) {
 			System.out.println("success cancel reservation");
 			service.getBooking(bean.getReservationId());
-		}else {
+		} else {
 			System.out.println("Reservation cancelling is failed");
 		}
 		return "success";
