@@ -61,14 +61,19 @@ public class BookingAction extends ActionSupport implements SessionAware {
 
 		if (user != null) {
 			System.out.println("hello");
-			boolean var = service.cancelResrvtn(2);
-			if(var = true)
-			{
-				System.out.println("delete success");
-			}
-			else{
-				System.out.println("delete fail");
-			}
+			//working
+			//boolean var = service.cancelResrvtn(2);
+			//if(var = true)
+			//{
+			//System.out.println("delete success");
+			//}
+			//else{
+				//System.out.println("delete fail");
+			//}
+			service.createReservation(bean);
+			
+			
+			
 			System.out.println("" + user.getUsername());
 			System.out.println("" + user.getPassword());
 			int value = service.login(user.getUsername(), user.getPassword());
