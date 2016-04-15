@@ -73,7 +73,6 @@ public class BookingAction extends ActionSupport implements SessionAware {
 		} else {
 			return "error";
 		}
-
 	}
 
 	public String register() {

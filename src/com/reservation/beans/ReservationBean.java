@@ -3,8 +3,8 @@ package com.reservation.beans;
 import java.util.Date;
 
 public class ReservationBean {
-	private Date chechinDte;
-	private Date chechoutDte;
+	private String chechinDte;
+	private String chechoutDte;
 	private int noOfRms;
 	private int noOfGuests;
 	private String roomType;
@@ -23,16 +23,16 @@ public class ReservationBean {
 	public void setPersonId(int personId) {
 		this.personId = personId;
 	}
-	public Date getChechinDte() {
+	public String getChechinDte() {
 		return chechinDte;
 	}
-	public void setChechinDte(Date chechinDte) {
+	public void setChechinDte(String chechinDte) {
 		this.chechinDte = chechinDte;
 	}
-	public Date getChechoutDte() {
+	public String getChechoutDte() {
 		return chechoutDte;
 	}
-	public void setChechoutDte(Date chechoutDte) {
+	public void setChechoutDte(String chechoutDte) {
 		this.chechoutDte = chechoutDte;
 	}
 	public int getNoOfRms() {
