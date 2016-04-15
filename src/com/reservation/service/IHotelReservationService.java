@@ -3,6 +3,7 @@ package com.reservation.service;
 import java.util.List;
 import java.util.Date;
 
+import com.reservation.beans.Customer;
 import com.reservation.beans.ReservationBean;
 import com.reservation.beans.User;
 
@@ -10,6 +11,7 @@ public interface IHotelReservationService {
 
 	public int login (String username, String passwrd);
 	public int userRegistration(User user);
+	//public int userRegistrations(User user, Customer cus);
 	//public User getUserDetails(int UId);
 	//public List<ReservationBean> getAllBookings();
 	public List<ReservationBean> getAllBookings(int UsrId);

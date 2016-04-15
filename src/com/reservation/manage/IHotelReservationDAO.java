@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.List;
 
+import com.reservation.beans.Customer;
 import com.reservation.beans.ReservationBean;
 import com.reservation.beans.User;
 
@@ -24,7 +25,7 @@ public interface IHotelReservationDAO {
 	public Connection dbConnector();
 	public int login(String usrnme, String passwrd);
 	public int userRegistration(User user);
-	
+//	public int userRegistrations(User user,Customer cus);
 	
 	
 	

@@ -55,7 +55,7 @@
 										<i class="fa fa-user"
 											style="width: 65px; height: 65px; font-size: 45px; margin: 0 auto 8px; padding-top: 7px; padding-left: 13px; display: block; border: solid 1px #CDCDCD; color: #CECECE; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%;"></i>
 									</div>
-									<form id="NewAccountForm" method="POST" action="hr/register"
+									<form id="NewAccountForm" method="POST" action="register.action"
 										novalidate="novalidate">
 										<div class="form-group">
 											<div class="input-group">
@@ -186,6 +186,34 @@
 													class="fa fa-unlock-alt" title="Add contact details"></i></span> <input
 													type="text" class="form-control" id="telNums"
 													name="user.telNum" value="" required
+													title="Choose a Username" placeholder="Choose a Username" />
+												<span class="input-group-addon" id="PasswordLockAltHelp"><a
+													href="#CVVLightbox" data-toggle="modal"><i
+														class="fa fa-question-circle"></i></a></span>
+											</div>
+											<span class="help-block"></span>
+										</div>
+										<div class="form-group">
+											<div class="input-group">
+												<span class="input-group-addon" id="UserPassword"><i
+													class="fa fa-unlock-alt" title="Add contact details"></i></span> 
+													<select name = "customer.modeOfTraveling">
+													<option name="travel" value="holiday">Holiday
+													<option name="travel" value="Trip">Trip
+													
+													</select>												
+													<span class="input-group-addon" id="PasswordLockAltHelp"><a
+													href="#CVVLightbox" data-toggle="modal"><i
+														class="fa fa-question-circle"></i></a></span>
+											</div>
+											<span class="help-block"></span>
+										</div>
+										<div class="form-group">
+											<div class="input-group">
+												<span class="input-group-addon" id="UserPassword"><i
+													class="fa fa-unlock-alt" title="Add contact details"></i></span> <input
+													type="text" class="form-control" id="telNums"
+													name=" customer.email " value=" " required
 													title="Choose a Username" placeholder="Choose a Username" />
 												<span class="input-group-addon" id="PasswordLockAltHelp"><a
 													href="#CVVLightbox" data-toggle="modal"><i

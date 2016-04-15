@@ -4,9 +4,12 @@ package com.reservation.ws;
 import java.util.List;
 
 
+
+
 import javax.ws.rs.BeanParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -20,6 +23,7 @@ import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.UriInfo;
 
 import com.google.gson.Gson;
+import com.reservation.beans.Customer;
 import com.reservation.beans.ReservationBean;
 import com.reservation.beans.User;
 import com.reservation.service.HotelReservationServceImpl;
@@ -27,6 +31,7 @@ import com.reservation.service.HotelReservationServceImpl;
 @Path("/booking")
 public class BookingResource {
 	User user = new User();
+	Customer customer = new Customer();
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -39,15 +44,16 @@ public class BookingResource {
 	@Path("/login")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-		public int login(User user)
+		public int login(@FormParam("username") String username, @FormParam("password") String password)
 	{
-		String usernme = user.getUsername();
-		String passwrd = user.getPassword();
-		
+		//String usernme = user.getUsername();
+		//String passwrd = user.getPassword();
+		System.out.println("username"+username);
+		System.out.println("passwrd"+password);
 		System.out.println("method invoked");
 	   HotelReservationServceImpl serviceLogin = new HotelReservationServceImpl();
 	   
-	  int i = serviceLogin.login(usernme, passwrd);
+	  int i = serviceLogin.login(username, password);
 	   return i;
 	   
 	}
