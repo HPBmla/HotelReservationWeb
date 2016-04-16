@@ -171,9 +171,34 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 	
 	//create reservation
 		public String createReservation(ReservationBean bean) {
-			System.out.println("another hello");
-			String chechinDte = "2016-02-12";
-			 System.out.println(chechinDte);
+			//session.get(user);
+			//int uid = user.getUserId();
+			//System.out.println("userid" + uid);
+			System.out.println("another hello new res");
+			//Date chechoutDte = bean.getChechoutDte();
+		    //int noOfRms = 2;
+		    //System.out.println(noOfRms);
+			int noOfRms = bean.getNoOfRms();
+			System.out.println(noOfRms);
+			
+		    //int noOfGuests = 4;
+		    //System.out.println(noOfGuests);
+			int noOfGuests = bean.getNoOfGuests();
+			System.out.println(noOfGuests);
+			
+		    //String roomType = "master";
+		    //System.out.println(roomType);
+			String roomType = bean.getRoomType();
+			System.out.println(roomType);
+		    
+		    //int personId = 5;
+		    //System.out.println(personId);
+			int personId = bean.getPersonId();
+			System.out.println(personId);
+			
+			
+			//String chechinDte = "2016-02-12";
+			 //System.out.println(chechinDte);
 			//String inputcin = bean.getChechinDte();
 		    //SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
 		    //Date date = format.parse(inputcin);
@@ -183,8 +208,8 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 		    SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd");
 		    
 		    //String chechinDte = "2016-02-12";
-		    System.out.println(chechinDte);
-			//String chechinDte = bean.getChechinDte();
+		    //System.out.println(chechinDte);
+			String chechinDte = bean.getChechinDte();
 			String inputcin = chechinDte;
 		    
 				try {
@@ -197,9 +222,9 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 				System.out.println(sqlDatecin);
 		    
 			//System.out.println(""+ bean.getChechoutDte());
-		    String chechoutDte = "2016-02-24";
-		    System.out.println(chechoutDte);
-		    //String chechoutDte = bean.getChechoutDte();
+		    //String chechoutDte = "2016-02-24";
+		    //System.out.println(chechoutDte);
+		    String chechoutDte = bean.getChechoutDte();
 			String inputcout = chechoutDte;
 		    //SimpleDateFormat format1 = new SimpleDateFormat("yyyy-mm-dd");
 		    
@@ -212,25 +237,14 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 				java.sql.Date sqlDatecout = new java.sql.Date(dateout.getTime());
 				System.out.println(sqlDatecout);
 		    
-			//Date chechoutDte = bean.getChechoutDte();
-		    int noOfRms = 2;
-		    System.out.println(noOfRms);
-			//int noOfRms = bean.getNoOfRms();
-		    int noOfGuests = 4;
-		    System.out.println(noOfGuests);
-			//int noOfGuests = bean.getNoOfGuests();
-		    String roomType = "master";
-		    System.out.println(roomType);
-			//String roomType = bean.getRoomType();
-		    int personId = 1;
-		    System.out.println(personId);
-			//int personId = bean.getPersonId();
-		    String status = "c01";
-		    System.out.println(status);
+			
+		    
+		    //String status = "c01";
+		    //System.out.println(status);
 			//String status = bean.getStatus();
 			
 			String addSql = " INSERT INTO reservation (checkin_date,checkout_date,no_of_rms,no_of_guests,room_type,persn_id,status) "+ 
-					"values "+ "('"+ sqlDatecin +"','"+ sqlDatecout +"','"+ noOfRms +"','"+ noOfGuests +"','"+ roomType +"','"+ personId +"','"+ status +"')";
+					"values "+ "('"+ sqlDatecin +"','"+ sqlDatecout +"','"+ noOfRms +"','"+ noOfGuests +"','"+ roomType +"','"+ personId +"','"+ "c01" +"')";
 			
 			/*String addSql = " INSERT INTO reservation (checkin_date,chechout_date,no_of_rooms,guests,room_type) "+ 
 					"values "+ "('"+ chechinDte +"','"+ chechoutDte +"','"+ noOfRms +"','"+ noOfGuests +"','"+ roomType +"')";*/
@@ -255,6 +269,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 	
 	//getBookings
 		public ReservationBean getBooking(int Uid) {
+			System.out.println("booking");
 			int userid = Uid;
 			con = dbConnector();
 			ReservationBean bean = new ReservationBean();
@@ -611,9 +626,9 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 	
 	public List<ReservationBean> getAllBookings(int UsrId)
 	{
-		String getReservtbQuery = "select checkin_date,checkout_date,persn_id,status from reservation where persn_id='"+UsrId+"'";
+		String getReservtbQuery = "select checkin_date,checkout_date,persn_id,status,no_of_rms,no_of_guests,room_type from reservation where persn_id='"+UsrId+"'";
 		con = dbConnector();
-		ReservationBean reservtn = new ReservationBean();
+		ReservationBean reservtn = null;
 		List<ReservationBean> resrveBean = null ;
 		try {
 			pstmnt = con.prepareStatement(getReservtbQuery);
@@ -621,10 +636,17 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
             resrveBean = new ArrayList<ReservationBean>();
 			while(rows.next())
 			{
+
+				reservtn = new ReservationBean();
 				reservtn.setChechinDte(rows.getString("checkin_date"));
 				reservtn.setChechoutDte(rows.getString("checkout_date"));
+	           
+
 				reservtn.setPersonId(rows.getInt("persn_id"));
 				reservtn.setStatus(rows.getString("status"));
+				reservtn.setNoOfRms(rows.getInt("no_of_rms"));
+				reservtn.setNoOfGuests(rows.getInt("no_of_guests"));
+				reservtn.setRoomType(rows.getString("room_type"));
 				resrveBean.add(reservtn);
 			}
 			System.out.println(resrveBean.size());

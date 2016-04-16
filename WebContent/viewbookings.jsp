@@ -47,31 +47,24 @@
 				<table id="table_id" class="table">
 					<thead>
 						<tr>
-							<th>Date</th>
-							<th>Check-In Time</th>
-							<th>Check-Out Time</th>
+							<th>Check-In Date</th>
+							<th>Check-Out Date</th>
+							<th>No of Rooms</th>
+							<th>Room Type</th>
+							<th>No of guests</th>
 						</tr>
 					</thead>
-					<s:iterator value="groupDao.groups" status="groupStatus">
+					<s:iterator value="bookingList" status="groupStatus">
 						<tbody>
 
 							<tr>
 
-								<td><s:property value="name" /></td>
 								<td><s:property value="%{chechinDte}" /></td>
 								<td><s:property value="%{chechoutDte}" /></td>
-							</tr>
-							<tr>
-								<td><s:property value="name" /></td>
-								<td><s:property value="%{chechinDte}" /></td>
-								<td><s:property value="%{chechoutDte}" /></td>
-							</tr>
-							<tr>
-								<td><s:property value="name" /></td>
-								<td><s:property value="%{chechinDte}" /></td>
-								<td><s:property value="%{chechoutDte}" /></td>
-
-
+								<td><s:property value="%{noOfRms}" /></td>
+								<td><s:property value="%{roomType}" /></td>
+								<td><s:property value="%{noOfGuests}" /></td>
+								
 							</tr>
 
 						</tbody>

@@ -12,7 +12,7 @@
             <result name="success">/HelloWorld.jsp</result>
       </action>
       <action name="login"
-       class="com.reservation.action.BookingAction" 
+       class="com.reservation.action.LoginAction" 
             method="login">
             <result name="success">/newbooking.jsp</result>
             <result  name= "error">/login.jsp</result>
@@ -29,9 +29,9 @@
       </action>
       <action name="createreservation"
        class="com.reservation.action.BookingAction" 
-            method="login">
-            <result name="success">/newbooking.jsp</result>
-            <result  name= "error">/home.jsp</result>
+            method="createreservation">
+            <result name="success">/home.jsp</result>
+            <result  name= "error">/ErrorFile.jsp</result>
       </action>
       <action name="getbooking"
        class="com.reservation.action.BookingAction" 

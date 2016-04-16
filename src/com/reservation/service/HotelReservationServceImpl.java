@@ -117,7 +117,7 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 	public String createReservation(ReservationBean bean) {
 		// TODO Auto-generated method stub
 		String i = null;
-		/*if(bean.getChechinDte() == null)
+		if(bean.getChechinDte() == null)
 		{
 			System.out.print(" Please select your Check In Date ");
 		}
@@ -136,28 +136,29 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 		else if(bean.getRoomType().isEmpty())
 		{
 			System.out.print(" Please select the Room type you need ");
-		}*/
-		//else
-		//{
+		}
+		else
+		{
 			 i = dbcon.createReservation(bean);
-		//}
+		}
 		return "success";
 	}
 
 	@Override
 	public ReservationBean getBooking(int Uid) {
-
-		if(Uid == 0)
+		System.out.println("getbooking method calling");
+		//int i = null;
+		/*if(Uid == 0)
 		{
 			System.out.print(" Please Login to complete this functionality ");
 		}
 		else
 		{
 		//int i =	dbcon.getBooking(Uid);
-		}
+		}*/
 
-		return null;
-		//return dbcon.getBooking(Uid);
+		//return null;
+		return dbcon.getBooking(Uid);
 	}
 
 	@Override

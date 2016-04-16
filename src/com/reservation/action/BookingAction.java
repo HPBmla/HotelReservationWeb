@@ -21,7 +21,7 @@ import com.reservation.service.HotelReservationServceImpl;
 public class BookingAction extends ActionSupport implements SessionAware {
 	private String name;
 	private User user;
-	private ReservationBean bean;
+	private ReservationBean bean = null;
 	private List<ReservationBean> bookingList;
 
 	Map<String, Object> session = (Map) ActionContext.getContext().getSession();
@@ -57,8 +57,13 @@ public class BookingAction extends ActionSupport implements SessionAware {
 	}
 
 	public String login() {
-
+		
 		if (user != null) {
+			System.out.println("another calling");
+			
+			//service.getBooking(2);
+			
+			
 			System.out.println("" + user.getUsername());
 			System.out.println("" + user.getPassword());
 			int value = service.login(user.getUsername(), user.getPassword());
@@ -67,6 +72,7 @@ public class BookingAction extends ActionSupport implements SessionAware {
 			}
 			session.put("user", user);
 			System.out.println(user.getUserId());
+			
 			return "success";
 		} else {
 			return "error";
@@ -136,17 +142,22 @@ public class BookingAction extends ActionSupport implements SessionAware {
 
 	}
 
-	public String createReservation() {
-		service.getBooking(user.getUserId());
+	public String createreservation() {
+		System.out.println("calling method in boking action");
+		user = (User) session.get("user");
+		int id = user.getUserId();
+		System.out.println(id);
+		bean = new ReservationBean();
 		if (bean != null) {
 
 			System.out.println("" + bean.getChechinDte());
 			System.out.println("" + bean.getChechoutDte());
-			System.out.println("" + bean.getNoOfRms());
-			System.out.println("" + bean.getNoOfGuests());
+			int x = bean.getNoOfRms();
+			System.out.println("getNoOfRms" + (x));
+			//System.out.println("" + Integer.parseInt("bean.getNoOfGuests()"));
 			System.out.println("" + bean.getRoomType());
-			System.out.println("" + bean.getStatus());
-			System.out.println("" + bean.getPersonId());
+			//System.out.println("" + bean.getStatus());
+			System.out.println("" + id);
 
 			service.createReservation(bean);
 

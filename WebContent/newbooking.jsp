@@ -43,46 +43,20 @@
 			class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 			<div class="panel panel-info">
 				<div class="panel-heading">
-					<div class="panel-title">New Reservation
-						<div class="form-group" style="float:right;">
-							<!-- Button -->
-							<button id="addBooking" type="button" class="btn btn-info">
-							Save Booking
-							</button>
-						</div>
-					</div>
+					<div class="panel-title">New Reservation</div>
 					<br />
 				</div>
 				<div class="panel-body">
-					<form id="signupform" class="form-horizontal" role="form"
+					<form id="createResform" class="form-horizontal" role="form"
 						action="createreservation.action" method="post" theme="css_xhtml">
 						<div id="signupalert" style="display: none"
 							class="alert alert-danger">
 							<p>Error:</p>
 							<span></span>
 						</div>
-						<!-- ><div class="form-group">
-							<label for="Date" class="col-md-3 control-label">Checking
-								Date</label>
-							<div class="col-md-9">
-								<input id="Text2" type="text" class="form-control"
-									name="bean.chechinDte">
-							</div>
-						</div> -->
-						<!--<div class="form-group">
-							<label for="Date" class="col-md-3 control-label">Checkout
-								Date</label>
-							<div class="col-md-9">
-								<input id="Text1" type='text' class="form-control"
-									name="bean.chechoutDte" />
-							</div>
-							<label for="codate" class="col-md-3 control-label">Checkout
-								Date</label>
-							<div class="col-md-9">
-								<input type="text" class="form-control" name="bean.chechoutDte"
-									placeholder="Checkout Date">
-							</div> 
-						</div>-->
+						<br>
+						
+						<br> <br> <br>
 						<div class="form-group">
 							<label for="rooms" class="col-md-3 control-label">No Of
 								Rooms</label>
@@ -128,6 +102,20 @@
 									</div>
 								</div>
 							</div>
+							<br>
+							<br>
+							<div class="row">
+							<div class="col-md-4"></div>
+							<div class="col-md-4"></div>
+							<div class="col-md-3">
+								<div class="form-group" style="float: right;">
+									<!-- Button -->
+									<button id="addBooking" type="submit" class="btn btn-info">
+										Save Booking</button>
+								</div>
+							</div>
+							<div class="col-md-1"></div>
+						</div>
 						</div>
 					</form>
 				</div>
