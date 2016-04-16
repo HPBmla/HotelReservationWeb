@@ -3,16 +3,15 @@ package com.reservation.action;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
 import java.util.Map;
 
 import org.omg.PortableInterceptor.SUCCESSFUL;
-
 import org.apache.struts2.components.Bean;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.reservation.beans.Customer;
 import com.reservation.beans.ReservationBean;
 import com.reservation.beans.User;
 import com.reservation.manage.HotelReservationDAOImpl;
@@ -21,7 +20,12 @@ import com.reservation.service.HotelReservationServceImpl;
 public class BookingAction extends ActionSupport implements SessionAware {
 	private String name;
 	private User user;
+<<<<<<< HEAD
 	private ReservationBean bean = null;
+=======
+	private Customer customer;
+	private ReservationBean bean;
+>>>>>>> origin/master
 	private List<ReservationBean> bookingList;
 
 	Map<String, Object> session = (Map) ActionContext.getContext().getSession();
@@ -73,6 +77,10 @@ public class BookingAction extends ActionSupport implements SessionAware {
 			session.put("user", user);
 			System.out.println(user.getUserId());
 			
+<<<<<<< HEAD
+=======
+			//service.userRegistrations(user, customer);
+>>>>>>> origin/master
 			return "success";
 		} else {
 			return "error";
@@ -81,7 +89,7 @@ public class BookingAction extends ActionSupport implements SessionAware {
 
 	public String register() {
 		if (user != null) {
-
+              customer = new Customer();
 			System.out.println("" + user.getFname());
 			System.out.println("" + user.getLname());
 			System.out.println("" + user.getAdd1());
@@ -94,8 +102,10 @@ public class BookingAction extends ActionSupport implements SessionAware {
 			System.out.println("" + user.getTelNum());
 			System.out.println("" + user.getUserType());
 			System.out.println("" + user.getNic());
+			System.out.println("" + customer.getEmail());
+			System.out.println("" + customer.getModeOfTraveling());
 			service.userRegistration(user);
-
+			
 		} else {
 			System.out.println("No registration is done");
 		}

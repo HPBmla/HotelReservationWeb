@@ -14,6 +14,7 @@ import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.reservation.beans.Customer;
 import com.reservation.beans.ReservationBean;
 import com.reservation.beans.User;
 
@@ -24,7 +25,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
     public ResultSet rows = null;
    public Connection con = null;
    public PreparedStatement pstmnt =null; 
-    
+    Customer customer = null;
     @Override
     public Connection dbConnector() {
 
@@ -97,6 +98,7 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
     }
      public User getUser(String username)
      {
+    	 
     	 String query = "select user_id,fname,lname,tel_num,nic from user where username='"+username+"'";
     	 User user = new User();
     	 con = dbConnector();
@@ -127,6 +129,8 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 	@Override
 	public int userRegistration(User user) {
 		//user.setFname();
+		
+		customer = new Customer();
 		user.setUserType("true");
 		String flag = user.getUserType();
 		String firstNme = user.getFname();
@@ -139,6 +143,98 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 		int telNum = user.getTelNum();
 		String flagUser = user.getUserType();
 		String nic = user.getNic();
+		int userId =0;
+		
+		String email = customer.getEmail();
+		System.out.println("userId is "+email);
+		String travel = customer.getModeOfTraveling();
+		
+		String addSql = " insert into user (fname,lname,add_lne1,add_lne2,add_lne3,username,password,tel_num,flag_user,nic) "+ 
+				"values "+ "('"+firstNme+"','"+lastNme+"','"+add1+"','"+add2+"','"+add3+"','"+usrnme+"','"+pswrd+"','"+telNum+"','"+flagUser+"','"+nic+"')";
+		try {
+			con =dbConnector();
+			stmnt = con.createStatement();
+			int i = stmnt.executeUpdate(addSql);
+			if(i > 0)
+			{
+				System.out.println("Records inserted");
+			}
+			else
+			{
+				System.out.println("Records not inserted");
+			}
+			
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+		
+		
+		finally
+		{
+			closeConnctn(con, rows, stmnt);
+		}
+               
+	user=getUser(usrnme);
+	
+	userId = user.getUserId();
+		
+		
+		String addCusQuery = "insert into customer (email,rsn_of_travl,user_id)"+ 
+				"values "+ "('"+email+"','"+travel+"','"+userId+"')";
+		try {
+			con =dbConnector();
+			stmnt = con.createStatement();
+			int i = stmnt.executeUpdate(addCusQuery);
+			
+			
+			if(i > 0)
+			{
+				System.out.println("Records inserted");
+			}
+			else
+			{
+				System.out.println("Records not inserted");
+			}
+			
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+		
+		
+		finally
+		{
+			closeConnctn(con, rows, stmnt);
+		}
+		
+		
+		return 1;
+	}
+	
+	
+/*	@Override
+	public int userRegistrations(User user,Customer cus) {
+		//user.setFname();
+		user.setUserType("true");
+		String flag = user.getUserType();
+		String firstNme = user.getFname();
+		String lastNme = user.getLname();
+		String add1 = user.getAdd1();
+		String add2 = user.getAdd2();
+		String add3 = user.getAdd3();
+		String usrnme = user.getUsername();
+		String pswrd = user.getPassword();
+		int telNum = user.getTelNum();
+		String flagUser = user.getUserType();
+		String nic = user.getNic();
+		int userId = user.getUserId();
+	//	String email = cus.getEmail();
+	//	String travel = cus.getModeOfTraveling();
 		
 		
 		String addSql = " insert into user (fname,lname,add_lne1,add_lne2,add_lne3,username,password,tel_num,flag_user,nic) "+ 
@@ -161,13 +257,48 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 			
 			e.printStackTrace();
 		}
+		
+		
+		
+		finally
+		{
+			closeConnctn(con, rows, stmnt);
+		}
+		String emails = "ssssssssssssss";
+		String travels = "travel";
+		
+		String addCusQuery = "insert into customer (email,rsn_of_travl,user_id)"+ 
+				"values "+ "('"+emails+"','"+travels+"','"+userId+"')";
+		try {
+			con =dbConnector();
+			stmnt = con.createStatement();
+			int i = stmnt.executeUpdate(addCusQuery);
+			
+			
+			if(i > 0)
+			{
+				System.out.println("Records inserted");
+			}
+			else
+			{
+				System.out.println("Records not inserted");
+			}
+			
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+		
+		
 		finally
 		{
 			closeConnctn(con, rows, stmnt);
 		}
 		
 		return 1;
-	}
+	}*/
 	
 	//create reservation
 		public String createReservation(ReservationBean bean) {
@@ -633,15 +764,27 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 		try {
 			pstmnt = con.prepareStatement(getReservtbQuery);
 			rows = pstmnt.executeQuery();
-            resrveBean = new ArrayList<ReservationBean>();
+			 resrveBean = new ArrayList<ReservationBean>();
 			while(rows.next())
 			{
+<<<<<<< HEAD
 
 				reservtn = new ReservationBean();
 				reservtn.setChechinDte(rows.getString("checkin_date"));
 				reservtn.setChechoutDte(rows.getString("checkout_date"));
 	           
 
+=======
+<<<<<<< HEAD
+				
+				reservtn = new ReservationBean();
+				reservtn.setChechinDte(rows.getDate("checkin_date"));
+				reservtn.setChechoutDte(rows.getDate("checkout_date"));
+=======
+				reservtn.setChechinDte(rows.getString("checkin_date"));
+				reservtn.setChechoutDte(rows.getString("checkout_date"));
+>>>>>>> origin/master
+>>>>>>> origin/master
 				reservtn.setPersonId(rows.getInt("persn_id"));
 				reservtn.setStatus(rows.getString("status"));
 				reservtn.setNoOfRms(rows.getInt("no_of_rms"));

@@ -2,6 +2,7 @@ package com.reservation.service;
 
 import java.util.List;
 
+import com.reservation.beans.Customer;
 import com.reservation.beans.ReservationBean;
 import com.reservation.beans.User;
 import com.reservation.manage.HotelReservationDAOImpl;
@@ -12,7 +13,7 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 	
 	HotelReservationDAOImpl dbcon = new HotelReservationDAOImpl();
 	User user = new User();
-	
+	Customer customer = new Customer();
 	@Override
 	public int login(String username, String passwrd) {
 		int i = 0;
@@ -67,15 +68,22 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 		{
 			System.out.print(" Enter a username ");
 		}
+		else if(customer.getEmail().isEmpty())
+		{
+			System.out.println("Enter your email address");
+		}
 		else
 		{
 			 i = dbcon.userRegistration(user);
 		}
 		
 		
+		
 		return i;
 	}
 
+	
+	
 /*	@Override
 	public User getUserDetails(int UId) {
 		
@@ -239,5 +247,11 @@ public class HotelReservationServceImpl implements IHotelReservationService {
 		db.dbConnector();
 		
 	}
+
+/*@Override
+public int userRegistrations(User user, Customer cus) {
+	int i = dbcon.userRegistrations(user, cus);
+	return i;
+}*/
 	
 }
