@@ -47,10 +47,9 @@
 				<table id="table_id" class="table">
 					<thead>
 						<tr>
-<<<<<<< HEAD
-=======
+
 							
->>>>>>> origin/master
+
 							<th>Check-In Date</th>
 							<th>Check-Out Date</th>
 							<th>No of Rooms</th>
@@ -70,8 +69,7 @@
 								<td><s:property value="%{noOfGuests}" /></td>
 								
 							</tr>
-<<<<<<< HEAD
-=======
+
 						<!-- 	<tr>
 							<td><s:property value="%{chechinDte}" /></td>
 								<td><s:property value="%{chechoutDte}" /></td>
@@ -88,7 +86,7 @@
 
 
 							</tr> -->
->>>>>>> origin/master
+
 
 						</tbody>
 					</s:iterator>
