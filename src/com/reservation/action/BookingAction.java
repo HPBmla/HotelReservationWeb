@@ -20,12 +20,12 @@ import com.reservation.service.HotelReservationServceImpl;
 public class BookingAction extends ActionSupport implements SessionAware {
 	private String name;
 	private User user;
-<<<<<<< HEAD
+
 	private ReservationBean bean = null;
-=======
+
 	private Customer customer;
-	private ReservationBean bean;
->>>>>>> origin/master
+
+
 	private List<ReservationBean> bookingList;
 
 	Map<String, Object> session = (Map) ActionContext.getContext().getSession();
@@ -77,10 +77,9 @@ public class BookingAction extends ActionSupport implements SessionAware {
 			session.put("user", user);
 			System.out.println(user.getUserId());
 			
-<<<<<<< HEAD
-=======
+
 			//service.userRegistrations(user, customer);
->>>>>>> origin/master
+
 			return "success";
 		} else {
 			return "error";

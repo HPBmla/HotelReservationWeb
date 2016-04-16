@@ -767,24 +767,17 @@ public class HotelReservationDAOImpl implements IHotelReservationDAO {
 			 resrveBean = new ArrayList<ReservationBean>();
 			while(rows.next())
 			{
-<<<<<<< HEAD
+
 
 				reservtn = new ReservationBean();
 				reservtn.setChechinDte(rows.getString("checkin_date"));
 				reservtn.setChechoutDte(rows.getString("checkout_date"));
 	           
 
-=======
-<<<<<<< HEAD
+
 				
-				reservtn = new ReservationBean();
-				reservtn.setChechinDte(rows.getDate("checkin_date"));
-				reservtn.setChechoutDte(rows.getDate("checkout_date"));
-=======
-				reservtn.setChechinDte(rows.getString("checkin_date"));
-				reservtn.setChechoutDte(rows.getString("checkout_date"));
->>>>>>> origin/master
->>>>>>> origin/master
+				
+
 				reservtn.setPersonId(rows.getInt("persn_id"));
 				reservtn.setStatus(rows.getString("status"));
 				reservtn.setNoOfRms(rows.getInt("no_of_rms"));
