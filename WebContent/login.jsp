@@ -114,7 +114,7 @@
 
 											</form>
 
-<<<<<<< HEAD
+
                                          <!-- <form id="loginForm" novalidate="novalidate"
 												action="/rs/login" method="post" theme="css_xhtml">
 												<div class="form-group">
@@ -139,11 +139,6 @@
 												</div>
 												<button type="submit" class="btn btn-success btn-block">Login</button>
 											</form>-->
-
-=======
-
-                                
->>>>>>> origin/master
 
 										</div>
 										<p style="text-align: center;">
