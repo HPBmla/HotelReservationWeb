@@ -140,8 +140,11 @@
 												<button type="submit" class="btn btn-success btn-block">Login</button>
 											</form>-->
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> origin/master
 										</div>
 										<p style="text-align: center;">
 											<a href="#" title="Forgot password?">Forgot password?</a>

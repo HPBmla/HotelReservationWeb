@@ -6,7 +6,6 @@ import java.util.List;
 
 
 
-import javax.ws.rs.BeanParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.FormParam;
@@ -22,7 +21,10 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.UriInfo;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 import com.reservation.beans.Customer;
 import com.reservation.beans.ReservationBean;
 import com.reservation.beans.User;
