@@ -22,7 +22,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.UriInfo;
 
-import com.google.gson.Gson;
+
 import com.reservation.beans.Customer;
 import com.reservation.beans.ReservationBean;
 import com.reservation.beans.User;
@@ -36,6 +36,15 @@ public class BookingResource {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public String greeting() {
+ 
+	    System.out.println("correct");
+		return "Hello world";
+	}
+	
+	@GET
+	@Path("/get")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String hello() {
  
 	    System.out.println("correct");
 		return "Hello world";
